@@ -1,7 +1,12 @@
+# Default
 node_modules
 
+# Remix
 /api
 /.cache
 /build
 /public/build
 .env
+
+# PWA
+/public/entry.worker.js
