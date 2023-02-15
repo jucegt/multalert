@@ -1,5 +1,6 @@
 # Default
 node_modules
+.DS_Store
 
 # Remix
 /api
