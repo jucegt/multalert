@@ -9,6 +9,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import GlobalStyles from '~/components/global';
+import fonts from '~/components/global/fonts.css';
 
 let isMount = true;
 
@@ -22,6 +24,10 @@ export const links: LinksFunction = () => [
   {
     rel: 'manifest',
     href: '/resources/manifest.webmanifest',
+  },
+  {
+    rel: 'stylesheet',
+    href: '/styles/fonts.css',
   },
 ];
 
@@ -71,6 +77,7 @@ export default function App() {
         {typeof document === 'undefined' ? '__STYLES__' : null}
       </head>
       <body>
+        <GlobalStyles />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
