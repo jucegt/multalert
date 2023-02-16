@@ -19,6 +19,7 @@ const Plate = () => {
           </PlateType>
           <PlateNumber
             as="input"
+            name="plate-number"
             type="text"
             placeholder="987ABC"
             maxLength={6}

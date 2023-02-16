@@ -10,13 +10,13 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import GlobalStyles from '~/components/global';
-import fonts from '~/components/global/fonts.css';
 
 let isMount = true;
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'New Remix App',
+  title:
+    'Multalert - Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
   viewport: 'width=device-width,initial-scale=1',
 });
 

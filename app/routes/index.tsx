@@ -1,5 +1,14 @@
+import { ActionArgs, redirect } from '@remix-run/node';
 import { useEffect } from 'react';
-import Plate from '~/components/plate';
+import SaveVehicle from '~/components/save-vehicle';
+
+export async function action({ request }: ActionArgs) {
+  const body = await request.formData();
+  console.log(body.get('name'));
+  console.log(body.get('plate-type'));
+  console.log(body.get('plate-number'));
+  return redirect('/');
+}
 
 export default function Index() {
   let deferredPrompt: any;
@@ -20,7 +29,7 @@ export default function Index() {
   }, []);
   return (
     <div>
-      <Plate />
+      <SaveVehicle />
       <button
         style={{ margin: '0 auto', display: 'block' }}
         onClick={handleClick}
