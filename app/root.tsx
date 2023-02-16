@@ -70,7 +70,7 @@ export default function App() {
   }, [location]);
 
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <Meta />
         <Links />
