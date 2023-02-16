@@ -121,3 +121,20 @@ export const PlateNumber = styled(PlateType)`
     }
   }
 `;
+
+export const PlateNotification = styled.span`
+  width: ${toRem(40)};
+  height: ${toRem(40)};
+  border-radius: ${toRem(40)};
+  background: #fa3e3e;
+  position: absolute;
+  top: ${toRem(-15)};
+  right: ${toRem(-15)};
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: ${toRem(20)};
+  line-height: ${toRem(38)};
+`;

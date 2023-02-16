@@ -16,7 +16,7 @@ let isMount = true;
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title:
-    'Multalert - Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
+    'multalert - Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
   viewport: 'width=device-width,initial-scale=1',
 });
 

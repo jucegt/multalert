@@ -1,6 +1,8 @@
 import { ActionArgs, redirect } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 import { useEffect } from 'react';
-import SaveVehicle from '~/components/save-vehicle';
+import PlatesSplash from '~/components/plates-splash';
+import SplashLayout from '~/layouts/splash';
 
 export async function action({ request }: ActionArgs) {
   const body = await request.formData();
@@ -20,20 +22,27 @@ export default function Index() {
       }
     }
   };
+
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt = e;
     });
   }, []);
   return (
-    <div>
-      <SaveVehicle />
-      <button
-        style={{ margin: '0 auto', display: 'block' }}
-        onClick={handleClick}
-      >
-        Install
-      </button>
-    </div>
+    <SplashLayout>
+      <PlatesSplash />
+      <p>
+        Te <span>notificamos</span>
+        <br /> cuando recibes una <br /> multa de tránsito <br /> de Emetra
+      </p>
+      <Link className="button" to="/vehiculos/agregar">
+        Agregar vehiculo
+      </Link>
+      <button onClick={handleClick}>Instalar</button>
+      <small>
+        Esta aplicación es segura, ya que no almacenamos ninguna información en
+        servidores, toda la información se almacena en tu dispositivo.
+      </small>
+    </SplashLayout>
   );
 }

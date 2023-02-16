@@ -1,6 +1,6 @@
-import { RemixBrowser } from "@remix-run/react";
-import { startTransition, StrictMode } from "react";
-import { hydrateRoot } from "react-dom/client";
+import { RemixBrowser } from '@remix-run/react';
+import { startTransition, StrictMode } from 'react';
+import { hydrateRoot } from 'react-dom/client';
 
 function hydrate() {
   startTransition(() => {
@@ -13,7 +13,7 @@ function hydrate() {
   });
 }
 
-if (typeof requestIdleCallback === "function") {
+if (typeof requestIdleCallback === 'function') {
   requestIdleCallback(hydrate);
 } else {
   // Safari doesn't support requestIdleCallback
@@ -21,43 +21,48 @@ if (typeof requestIdleCallback === "function") {
   setTimeout(hydrate, 1);
 }
 
-if ("serviceWorker" in navigator) {
+if ('serviceWorker' in navigator) {
   // Use the window load event to keep the page load performant
-  async function loadSW(){
-    console.log("loaded");
-    
+  async function loadSW() {
+    console.log('Service Worker Loaded');
+
     return navigator.serviceWorker
-      .register("/entry.worker.js")
+      .register('/entry.worker.js')
       .then(() => navigator.serviceWorker.ready)
       .then(() => {
         if (navigator.serviceWorker.controller) {
           navigator.serviceWorker.controller.postMessage({
-            type: "SYNC_REMIX_MANIFEST",
+            type: 'SYNC_REMIX_MANIFEST',
             manifest: window.__remixManifest,
           });
         } else {
-          navigator.serviceWorker.addEventListener("controllerchange", () => {
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
             navigator.serviceWorker.controller?.postMessage({
-              type: "SYNC_REMIX_MANIFEST",
+              type: 'SYNC_REMIX_MANIFEST',
               manifest: window.__remixManifest,
             });
           });
         }
       })
       .catch((error) => {
-        console.error("Service worker registration failed", error);
+        console.error('Service worker registration failed', error);
       });
-  };
+  }
 
-  if (document.readyState === "complete" || document.readyState === "interactive") {
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
     loadSW();
   } else {
-    window.addEventListener("load", loadSW);
+    window.addEventListener('load', loadSW);
   }
 }
 function urlBase64ToUint8Array(base64String: string): Uint8Array {
-  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
-  const base64 = (base64String + padding).replace(/\-/g, "+").replace(/_/g, "/");
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
 
   const rawData = window.atob(base64);
   const outputArray = new Uint8Array(rawData.length);
@@ -78,7 +83,7 @@ navigator.serviceWorker.ready
       return sub.subscription;
     }
 
-    const subInfo = await fetch("/resources/subscribe");
+    const subInfo = await fetch('/resources/subscribe');
     const returnedSubscription = await subInfo.text();
 
     const convertedVapidKey = urlBase64ToUint8Array(returnedSubscription);
@@ -88,11 +93,11 @@ navigator.serviceWorker.ready
     });
   })
   .then(async (subscription) => {
-    await fetch("./resources/subscribe", {
-      method: "POST",
+    await fetch('./resources/subscribe', {
+      method: 'POST',
       body: JSON.stringify({
         subscription: subscription,
-        type: "POST_SUBSCRIPTION",
+        type: 'POST_SUBSCRIPTION',
       }),
     });
   });

@@ -1,31 +1,46 @@
 import {
   PlateContent,
+  PlateNotification,
   PlateNumber,
   PlateType,
   PlateValue,
   PlateWrapper,
 } from './style';
+import { IPlate } from './types';
 
-const Plate = () => {
+const Plate = ({ notForm, type, number, notification }: IPlate) => {
   return (
     <PlateWrapper>
       <PlateContent>
         <PlateValue>
-          <PlateType name="plate-type" id="plate-type">
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="C">C</option>
-            <option value="U">U</option>
+          <PlateType
+            as={notForm ? 'span' : 'select'}
+            name="plate-type"
+            id="plate-type"
+          >
+            {notForm ? (
+              type
+            ) : (
+              <>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="C">C</option>
+                <option value="U">U</option>
+              </>
+            )}
           </PlateType>
           <PlateNumber
-            as="input"
+            as={notForm ? 'span' : 'input'}
             name="plate-number"
             type="text"
             placeholder="987ABC"
             maxLength={6}
-          />
+          >
+            {notForm ? number : null}
+          </PlateNumber>
         </PlateValue>
       </PlateContent>
+      <PlateNotification>{notification}</PlateNotification>
     </PlateWrapper>
   );
 };

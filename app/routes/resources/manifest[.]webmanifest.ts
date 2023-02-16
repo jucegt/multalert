@@ -4,8 +4,8 @@ import type { LoaderFunction } from '@remix-run/node';
 export let loader: LoaderFunction = () => {
   return json(
     {
-      short_name: 'Multalert',
-      name: 'Multalert',
+      short_name: 'multalert',
+      name: 'multalert',
       description:
         'Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
       start_url: '/?utm_source=pwa',
