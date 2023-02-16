@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
 export const SplashWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
   padding: ${toRem(16)};
@@ -46,4 +44,12 @@ export const SplashWrapper = styled.div`
     opacity: 0.4;
     font-family: 'Barlow';
   }
+`;
+
+export const SplashContent = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;

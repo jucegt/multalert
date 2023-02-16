@@ -1,12 +1,14 @@
 import Logo from '~/components/logo';
 import { IChildren } from '~/interfaces/IChildren';
-import { SplashWrapper } from './style';
+import { SplashContent, SplashWrapper } from './style';
 
 const SplashLayout = ({ children }: IChildren) => {
   return (
     <SplashWrapper>
-      <Logo />
-      {children}
+      <SplashContent>
+        <Logo />
+        {children}
+      </SplashContent>
     </SplashWrapper>
   );
 };
