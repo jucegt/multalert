@@ -2004,10 +2004,10 @@
   resolved "https://registry.yarnpkg.com/@vanilla-extract/private/-/private-1.0.3.tgz#7ec72bc2ff6fe51f9d650f962e8d1989b073690f"
   integrity sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==
 
-"@vercel/build-utils@6.2.3":
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-6.2.3.tgz#c2a2cb9c988fd1eb4d067c875ecf6a37a8c8d861"
-  integrity sha512-69LN45TIl5vgu0IiuVX6M/un4FiReAgSQR9z6xuDBhLJLiDcnWQ/wx+XemZuVPO62cOYm9jjp8QHWXIsIec/IQ==
+"@vercel/build-utils@6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-6.3.0.tgz#74d2b029f1d30eee146f1fdb0079d435cd42617c"
+  integrity sha512-Nbu/CIsv8HMp1+KPZ0n2YlHTKPfGRDrwhMgKW9Dx4z2S5sQWkXpe9WQ5ajePgwZVd7V1XiJYx1CCRaupIVgUwA==
 
 "@vercel/node-bridge@3.1.11":
   version "3.1.11"
@@ -2015,15 +2015,15 @@
   integrity sha512-LGbj+kPGgRnIlKo3949z01mLbHVi4BnRE7V5R6+J4E3f7xpQ12I9Wek10V7ivLB+LyS1+ATdjasdXAF4HOhqQw==
 
 "@vercel/node@^2.6.2":
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/@vercel/node/-/node-2.9.4.tgz#43762094709d9c5e27d78ad4ff91bb9892f3a2e9"
-  integrity sha512-O4pPnUUPI6hZGynxbI2fk8GloybZMO5dbGyicuK3WA+73LPxF+Xgaf8U5VmIc3NNwZqnEfJAA2Bhcnr23zpNYg==
+  version "2.9.6"
+  resolved "https://registry.yarnpkg.com/@vercel/node/-/node-2.9.6.tgz#04e25cb9a429e4ea19f7440d999a14f239a1c89b"
+  integrity sha512-A1/1LucW54jUH8YspTTQYeGdhOPK8Z17bt5vrnB4PW5PGnq5Dn2DaC1mly0/Lo4Qlz44xDIiknwGvAitLAs2gQ==
   dependencies:
     "@edge-runtime/vm" "2.0.0"
     "@types/node" "14.18.33"
-    "@vercel/build-utils" "6.2.3"
+    "@vercel/build-utils" "6.3.0"
     "@vercel/node-bridge" "3.1.11"
-    "@vercel/static-config" "2.0.12"
+    "@vercel/static-config" "2.0.13"
     edge-runtime "2.0.0"
     esbuild "0.14.47"
     exit-hook "2.2.1"
@@ -2031,10 +2031,10 @@
     ts-node "10.9.1"
     typescript "4.3.4"
 
-"@vercel/static-config@2.0.12":
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/@vercel/static-config/-/static-config-2.0.12.tgz#ff17565e74f391cd896ae79859e164070c93de91"
-  integrity sha512-mkTS3t6RV6Fu7G21LpegEuuHl9rwfyNkoBvsNV5BBP0h7/3OzHwHip+t20oKWk3IrWu5ic0nbLNhyARdkeA1hQ==
+"@vercel/static-config@2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@vercel/static-config/-/static-config-2.0.13.tgz#6ffd6879bdfa3014e7aceb68876b5757e9d90e19"
+  integrity sha512-09bVISGyhRMoL6gQTfM7n89SeUmyOlIzVMo2oNOj3thy4AIKGuN0SzEp0qNRw8d9j07rifp9JPD4rOuDRx4+eA==
   dependencies:
     ajv "8.6.3"
     json-schema-to-ts "1.6.4"
@@ -2516,9 +2516,9 @@ camelize@^1.0.0:
   integrity sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==
 
 caniuse-lite@^1.0.30001449:
-  version "1.0.30001452"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001452.tgz#dff7b8bb834b3a91808f0a9ff0453abb1fbba02a"
-  integrity sha512-Lkp0vFjMkBB3GTpLR8zk4NwW5EdRdnitwYJHDOOKIU85x4ckYCPQ+9WlVvSVClHxVReefkUMtWZH2l9KGlD51w==
+  version "1.0.30001454"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001454.tgz#033f6df4452643a64173d02543902caa158dfd9a"
+  integrity sha512-4E63M5TBbgDoA9dQoFRdjL6iAmzTrz3rwYWoKDlvnvyvBxjCZ0rrUoX3THhEMie0/RYuTCeMbeTYLGAWgnLwEg==
 
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"
@@ -3025,9 +3025,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.296"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.296.tgz#dbc84a25c25a432a12fbf62903cae4a87461eb8c"
-  integrity sha512-i/6Q+Y9bluDa2a0NbMvdtG5TuS/1Fr3TKK8L+7UUL9QjRS5iFJzCC3r70xjyOnLiYG8qGV4/mMpe6HuAbdJW4w==
+  version "1.4.300"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.300.tgz#37097e9bcdef687fb98abb5184434bdb958dfcd9"
+  integrity sha512-tHLIBkKaxvG6NnDWuLgeYrz+LTwAnApHm2R3KBNcRrFn0qLmTrqQeB4X4atfN6YJbkOOOSdRBeQ89OfFUelnEQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -3507,9 +3507,9 @@ eslint-plugin-react@^7.31.8:
     string.prototype.matchall "^4.0.8"
 
 eslint-plugin-testing-library@^5.6.4:
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-5.10.1.tgz#16ef8adb74d59a4dda24db1d5e750a0ee9b79471"
-  integrity sha512-GRy87AqUi2Ij69pe0YnOXm3oGBCgnFwfIv+Hu9q/kT3jL0pX1cXA7aO+oJnvdpbJy2+riOPqGsa3iAkL888NLg==
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-5.10.2.tgz#12f231ad9b52b6aef45c801fd00aa129a932e0c2"
+  integrity sha512-f1DmDWcz5SDM+IpCkEX0lbFqrrTs8HRsEElzDEqN/EBI0hpRj8Cns5+IVANXswE8/LeybIJqPAOQIFu2j5Y5sw==
   dependencies:
     "@typescript-eslint/utils" "^5.43.0"
 
@@ -3618,9 +3618,9 @@ esprima@^4.0.0, esprima@^4.0.1, esprima@~4.0.0:
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
 esquery@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.4.0.tgz#2148ffc38b82e8c7057dfed48425b3e61f0f24a5"
-  integrity sha512-cCDispWt5vHHtwMY2YrAQ4ibFkAL8RbH5YGBnZBc90MolvvfkkQcJro/aZiAQUlQ3qgrYS6D6v8Gc5G5CQsc9w==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.4.2.tgz#c6d3fee05dd665808e2ad870631f221f5617b1d1"
+  integrity sha512-JVSoLdTlTDkmjFmab7H/9SL9qGSyjElT3myyKp7krqjVFQCDLmj1QFaCLRFBszBKI0XVZaiiXvuPIX3ZwHe1Ng==
   dependencies:
     estraverse "^5.1.0"
 
@@ -5009,9 +5009,9 @@ lru-cache@^6.0.0:
     yallist "^4.0.0"
 
 lru-cache@^7.14.1:
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.1.tgz#8da8d2f5f59827edb388e63e459ac23d6d408fea"
-  integrity sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==
+  version "7.16.0"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.16.0.tgz#b1b946cff368d3f3c569cc3d6a5ba8f90435160f"
+  integrity sha512-VJBdeMa9Bz27NNlx+DI/YXGQtXdjUU+9gdfN1rYfra7vtTjhodl5tVNmR42bo+ORHuDqDT+lGAUAb+lzvY42Bw==
 
 lz-string@^1.4.4:
   version "1.4.4"
@@ -6471,9 +6471,9 @@ regexpp@^3.0.0, regexpp@^3.2.0:
   integrity sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==
 
 regexpu-core@^5.2.1:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-5.3.0.tgz#4d0d044b76fedbad6238703ae84bfdedee2cf074"
-  integrity sha512-ZdhUQlng0RoscyW7jADnUZ25F5eVtHdMyXSb2PiwafvteRAOJUjFoUPEYZSIfP99fBIs3maLIRfpEddT78wAAQ==
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-5.3.1.tgz#66900860f88def39a5cb79ebd9490e84f17bcdfb"
+  integrity sha512-nCOzW2V/X15XpLsK2rlgdwrysrBq+AauCn+omItIz4R1pIcmeot5zvjdmOBRLzEH/CkC6IxMJVmxDe3QcMuNVQ==
   dependencies:
     "@babel/regjsgen" "^0.8.0"
     regenerate "^1.4.2"
@@ -6527,6 +6527,11 @@ remark-rehype@^9.0.0:
     "@types/mdast" "^3.0.0"
     mdast-util-to-hast "^11.0.0"
     unified "^10.0.0"
+
+remix-esbuild-override@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/remix-esbuild-override/-/remix-esbuild-override-3.0.4.tgz#e62c7f00af1ea1e3398eaae62497c5faed72872f"
+  integrity sha512-nIK9DcPo+bo2G2l8a779KdJhOQ6fs7evWpMVDiEZmKd/rvDRf//5Ygcavrxa4W7hLcJzIXcwh+A3o7QimaJgVQ==
 
 require-from-string@^2.0.2:
   version "2.0.2"

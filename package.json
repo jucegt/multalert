@@ -8,7 +8,8 @@
     "build:remix": "cross-env NODE_ENV=production remix build",
     "build:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --minify --bundle --format=esm --define:process.env.NODE_ENV='\"production\"'",
     "dev:remix": "cross-env NODE_ENV=development remix dev",
-    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch"
+    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch",
+    "postinstall": "remix-esbuild-override"
   },
   "dependencies": {
     "@remix-run/node": "^1.13.0",
@@ -33,6 +34,7 @@
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.27.0",
+    "remix-esbuild-override": "^3.0.4",
     "typescript": "^4.9.5"
   },
   "engines": {
