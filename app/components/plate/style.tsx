@@ -110,12 +110,14 @@ export const PlateNumber = styled(PlateType)`
     }
     ::-moz-placeholder {
       background: #fff;
+      opacity: 1;
     }
     :-ms-input-placeholder {
       background: #fff;
     }
     :-moz-placeholder {
       background: #fff;
+      opacity: 1;
     }
   }
 `;

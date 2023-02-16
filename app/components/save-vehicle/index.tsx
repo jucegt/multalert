@@ -5,8 +5,8 @@ const SaveVehicle = () => {
   return (
     <Form method="post">
       <div>
-        <label htmlFor="name">Nombre:</label>
-        <input type="text" id="name" name="name" />
+        <label htmlFor="vehicle-name">Nombre:</label>
+        <input type="text" id="vehicle-name" name="vehicle-name" />
       </div>
       <Plate />
       <button>Guardar</button>
