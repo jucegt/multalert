@@ -1,7 +1,13 @@
+# Default
 node_modules
+.DS_Store
 
+# Remix
 /api
 /.cache
 /build
 /public/build
 .env
+
+# PWA
+/public/entry.worker.js
