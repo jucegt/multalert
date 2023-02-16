@@ -1,16 +1,12 @@
-import { ActionArgs, redirect } from '@remix-run/node';
-import { Link } from '@remix-run/react';
+import { Link, useNavigate } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import PlatesSplash from '~/components/plates-splash';
+import useLocalStorage from '~/hooks/use-local-storage';
 import SplashLayout from '~/layouts/splash';
 
-export async function action({ request }: ActionArgs) {
-  const body = await request.formData();
-  console.log(Object.fromEntries(body));
-  return redirect('/');
-}
-
 export default function Index() {
+  const navigate = useNavigate();
+  const [vehicles] = useLocalStorage('vehicles', []);
   const [hideInstall, setHideInstall] = useState(false);
   let deferredPrompt: any;
 
@@ -24,6 +20,9 @@ export default function Index() {
     }
   };
 
+  useEffect(() => {
+    if (vehicles?.length) navigate('/vehiculos');
+  }, [vehicles]);
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt = e;

@@ -40,7 +40,9 @@ const Plate = ({ notForm, type, number, notification }: IPlate) => {
           </PlateNumber>
         </PlateValue>
       </PlateContent>
-      <PlateNotification>{notification}</PlateNotification>
+      {notification ? (
+        <PlateNotification>{notification}</PlateNotification>
+      ) : null}
     </PlateWrapper>
   );
 };
