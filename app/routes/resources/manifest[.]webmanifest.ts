@@ -12,8 +12,8 @@ export let loader: LoaderFunction = () => {
       display: 'standalone',
       lang: 'es-GT',
       orientation: 'portrait',
-      background_color: '#d3d7dd',
-      theme_color: '#c34138',
+      background_color: '#305876',
+      theme_color: '#305876',
       shortcuts: [
         {
           name: 'Inicio',
