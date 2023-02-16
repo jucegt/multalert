@@ -1,6 +1,6 @@
 import { ActionArgs, redirect } from '@remix-run/node';
 import { Link } from '@remix-run/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import PlatesSplash from '~/components/plates-splash';
 import SplashLayout from '~/layouts/splash';
 
@@ -11,6 +11,7 @@ export async function action({ request }: ActionArgs) {
 }
 
 export default function Index() {
+  const [hideInstall, setHideInstall] = useState(false);
   let deferredPrompt: any;
 
   const handleClick = async () => {
@@ -27,6 +28,10 @@ export default function Index() {
     window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt = e;
     });
+    if (typeof window !== 'undefined') {
+      if (window.matchMedia('(display-mode: standalone)').matches)
+        setHideInstall(true);
+    }
   }, []);
   return (
     <SplashLayout>
@@ -35,10 +40,12 @@ export default function Index() {
         Te <span>notificamos</span>
         <br /> cuando recibes una <br /> multa de tránsito <br /> de Emetra
       </p>
-      <Link className="button" to="/vehiculos/agregar">
-        Agregar vehiculo
-      </Link>
-      <button onClick={handleClick}>Instalar</button>
+      <div>
+        <Link className="button" to="/vehiculos/agregar">
+          Agregar vehiculo
+        </Link>
+        {hideInstall ? null : <button onClick={handleClick}>Instalar</button>}
+      </div>
       <small>
         Esta aplicación es segura, ya que no almacenamos ninguna información en
         servidores, toda la información se almacena en tu dispositivo.
