@@ -10,6 +10,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import GlobalStyles from '~/components/global';
+import Icons from './components/icons';
 
 let isMount = true;
 
@@ -74,6 +75,7 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <Icons />
         {typeof document === 'undefined' ? '__STYLES__' : null}
       </head>
       <body>
