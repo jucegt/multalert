@@ -1,3 +1,9 @@
+import DefaultLayout from '~/layouts/default';
+
 export default function Tips() {
-  return <div>Pagina de Consejos</div>;
+  return (
+    <DefaultLayout>
+      <p>Pagina de Consejos</p>
+    </DefaultLayout>
+  );
 }

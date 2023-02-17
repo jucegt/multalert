@@ -23,10 +23,8 @@ export default function VehiclePlate() {
   }, [vehicles]);
   return (
     <DefaultLayout>
-      <>
-        Pagina de {vehicle?.['vehicle-name'].toString()}
-        <Plate notForm type={plateType} number={plateNumber} />
-      </>
+      <p>Pagina de {vehicle?.['vehicle-name'].toString()}</p>
+      <Plate notForm type={plateType} number={plateNumber} />
     </DefaultLayout>
   );
 }

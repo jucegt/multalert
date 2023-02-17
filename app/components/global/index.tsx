@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     background: #ccc;
     margin: 0;
     padding: 0;
+    font-family: 'Barlow';
   }
 `;
 

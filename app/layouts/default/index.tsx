@@ -1,17 +1,28 @@
 import { Link } from 'react-router-dom';
+import Logo from '~/components/logo';
 import { IChildren } from '~/interfaces/IChildren';
+import {
+  DefaultLayoutContainer,
+  DefaultLayoutFooter,
+  DefaultLayoutHeader,
+  DefaultLayoutWrapper,
+} from './style';
 
 const DefaultLayout = ({ children }: IChildren) => {
   return (
-    <div style={{ maxWidth: 500, margin: '0 auto' }}>
-      {children}
-      <Link
-        style={{ position: 'fixed', bottom: 20, right: 20 }}
-        to="/vehiculos/agregar"
-      >
-        Agregar
-      </Link>
-    </div>
+    <DefaultLayoutWrapper>
+      <DefaultLayoutHeader>
+        <DefaultLayoutContainer>
+          <Logo />
+        </DefaultLayoutContainer>
+      </DefaultLayoutHeader>
+      <DefaultLayoutContainer>{children}</DefaultLayoutContainer>
+      <DefaultLayoutFooter>
+        <Link to="/vehiculos">Vehiculos</Link>
+        <Link to="/vehiculos/agregar">Agregar</Link>
+        <Link to="/ajustes">Ajustes</Link>
+      </DefaultLayoutFooter>
+    </DefaultLayoutWrapper>
   );
 };
 
