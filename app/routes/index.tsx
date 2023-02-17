@@ -37,7 +37,7 @@ export default function Index() {
       <PlatesSplash />
       <p>
         Te <span>notificamos</span>
-        <br /> cuando recibes una <br /> multa de tránsito <br /> de Emetra
+        <br /> cuando recibes una <br /> multa de tránsito <br /> de EMETRA
       </p>
       <div>
         <Link className="button" to="/vehiculos/agregar">
