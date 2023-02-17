@@ -4,10 +4,8 @@ import DefaultLayout from '~/layouts/default';
 export default function AddVehicle() {
   return (
     <DefaultLayout>
-      <>
-        Pagina de agregar
-        <SaveVehicle />
-      </>
+      <p>Pagina de agregar</p>
+      <SaveVehicle />
     </DefaultLayout>
   );
 }
