@@ -1,6 +1,6 @@
-import { Link } from '@remix-run/react';
-import React, { useEffect, useState } from 'react';
-import Plate from '~/components/plate';
+import { useEffect, useState } from 'react';
+import Title from '~/components/title';
+import VehiclesList from '~/components/vehicles';
 import { IVehicle } from '~/interfaces/IVehicle';
 import DefaultLayout from '~/layouts/default';
 
@@ -16,28 +16,8 @@ export default function Vehicles() {
   }, []);
   return (
     <DefaultLayout>
-      <p>Pagina de Vehiculos</p>
-      <>
-        {vehicles.map((vehicle, index) => (
-          <React.Fragment key={index}>
-            <Link
-              to={`/vehiculos/${vehicle['plate-type']
-                .toString()
-                .toLowerCase()}-${vehicle['plate-number']
-                .toString()
-                .toLowerCase()}`}
-            >
-              {vehicle['vehicle-name'].toString()}
-            </Link>
-            <Plate
-              key={index}
-              notForm
-              type={vehicle['plate-type'].toString()}
-              number={vehicle['plate-number'].toString()}
-            />
-          </React.Fragment>
-        ))}
-      </>
+      <Title>Tus Vehículos</Title>
+      <VehiclesList vehicles={vehicles} />
     </DefaultLayout>
   );
 }

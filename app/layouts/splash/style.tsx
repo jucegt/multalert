@@ -7,11 +7,7 @@ export const SplashWrapper = styled.div`
   padding: ${toRem(16)};
   background: rgb(43, 88, 118);
   overflow-x: hidden;
-  background: linear-gradient(
-    180deg,
-    rgba(43, 88, 118, 1) 0%,
-    rgba(78, 67, 118, 1) 100%
-  );
+  background: linear-gradient(180deg, #2b5876 0%, #4e4376 100%);
   p {
     font-size: 36px;
     font-family: 'Barlow';

@@ -1,6 +1,7 @@
 import { useParams } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import Plate from '~/components/plate';
+import Title from '~/components/title';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
 import DefaultLayout from '~/layouts/default';
@@ -23,7 +24,7 @@ export default function VehiclePlate() {
   }, [vehicles]);
   return (
     <DefaultLayout>
-      <p>Pagina de {vehicle?.['vehicle-name'].toString()}</p>
+      <Title>{vehicle?.['vehicle-name'].toString()}</Title>
       <Plate notForm type={plateType} number={plateNumber} />
     </DefaultLayout>
   );
