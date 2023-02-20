@@ -3,6 +3,7 @@ import { useState } from 'react';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
 import Plate from '../plate';
+import { ButtonWrapper, InputWrapper, WarningText } from './style';
 
 const SaveVehicle = () => {
   const navigate = useNavigate();
@@ -36,15 +37,20 @@ const SaveVehicle = () => {
   };
   return (
     <form method="post" onSubmit={handleSubmit}>
-      {duplicated?.['vehicle-name']
-        ? `El vehiculo que estas intentando guardar ya esta guardado con el nombre de ${duplicated['vehicle-name']}`
-        : null}
-      <div>
+      {duplicated?.['vehicle-name'] ? (
+        <WarningText>
+          <>
+            El vehiculo que estas intentando guardar ya esta guardado con el
+            nombre de {duplicated['vehicle-name']}
+          </>
+        </WarningText>
+      ) : null}
+      <InputWrapper>
         <label htmlFor="vehicle-name">Nombre:</label>
         <input type="text" id="vehicle-name" name="vehicle-name" />
-      </div>
+      </InputWrapper>
       <Plate />
-      <button>Guardar</button>
+      <ButtonWrapper>Guardar</ButtonWrapper>
     </form>
   );
 };

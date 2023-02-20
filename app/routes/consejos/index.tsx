@@ -1,9 +1,10 @@
+import Title from '~/components/title';
 import DefaultLayout from '~/layouts/default';
 
 export default function Tips() {
   return (
     <DefaultLayout>
-      <p>Pagina de Consejos</p>
+      <Title>Consejos</Title>
     </DefaultLayout>
   );
 }
