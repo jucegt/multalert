@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   PlateContent,
   PlateNotification,
@@ -8,7 +9,16 @@ import {
 } from './style';
 import { IPlate } from './types';
 
-const Plate = ({ notForm, type, number, notification }: IPlate) => {
+const Plate = ({ notForm, type, number }: IPlate) => {
+  const [notification, setNotification] = useState(0);
+
+  useEffect(() => {
+    const tieneMultas = localStorage.getItem(
+      `${type?.toLowerCase()}-${number?.toLowerCase()}`
+    );
+
+    if (tieneMultas) setNotification(tieneMultas);
+  }, []);
   return (
     <PlateWrapper>
       <PlateContent>
