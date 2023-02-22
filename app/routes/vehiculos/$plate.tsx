@@ -25,6 +25,7 @@ export default function VehiclePlate() {
   const multas = useLoaderData<typeof loader>();
   const [vehicles] = useLocalStorage<IVehicle[]>('vehicles', []);
   const { plate } = useParams();
+  const [, setNotificacion] = useLocalStorage<number>(`${plate}`, 0);
   const [vehicle, setVehicle] = useState<IVehicle>();
   const plateSplit = plate?.split('-');
   const plateType = plateSplit?.[0].toUpperCase();
@@ -39,7 +40,9 @@ export default function VehiclePlate() {
     if (vehicleInfo) setVehicle(vehicleInfo);
   }, [vehicles]);
 
-  console.log(multas);
+  useEffect(() => {
+    if (multas?.tieneMultas) setNotificacion(multas.multas.length);
+  }, [multas]);
 
   return (
     <DefaultLayout>
