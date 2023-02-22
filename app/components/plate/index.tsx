@@ -9,8 +9,8 @@ import {
 } from './style';
 import { IPlate } from './types';
 
-const Plate = ({ notForm, type, number }: IPlate) => {
-  const [notification, setNotification] = useState(0);
+const Plate = ({ notForm, type, number, noti }: IPlate) => {
+  const [notification, setNotification] = useState(noti ?? 0);
 
   useEffect(() => {
     const tieneMultas = localStorage.getItem(
