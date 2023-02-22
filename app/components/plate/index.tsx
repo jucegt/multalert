@@ -17,7 +17,7 @@ const Plate = ({ notForm, type, number }: IPlate) => {
       `${type?.toLowerCase()}-${number?.toLowerCase()}`
     );
 
-    if (tieneMultas) setNotification(tieneMultas);
+    if (tieneMultas) setNotification(Number(tieneMultas));
   }, []);
   return (
     <PlateWrapper>
