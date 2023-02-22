@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { useLocation, useMatches } from '@remix-run/react';
 import type { MetaFunction, LinksFunction } from '@remix-run/node';
 import {
@@ -81,6 +82,7 @@ export default function App() {
       <body>
         <GlobalStyles />
         <Outlet />
+        <Analytics />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
