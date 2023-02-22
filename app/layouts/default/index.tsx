@@ -20,7 +20,7 @@ const DefaultLayout = ({ children }: IChildren) => {
       <DefaultLayoutFooter>
         <Link to="/vehiculos">Vehiculos</Link>
         <Link to="/vehiculos/agregar">Agregar</Link>
-        <Link to="/ajustes">Ajustes</Link>
+        {/* <Link to="/ajustes">Ajustes</Link> */}
       </DefaultLayoutFooter>
     </DefaultLayoutWrapper>
   );
