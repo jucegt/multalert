@@ -1,16 +1,15 @@
 import { parse } from 'node-html-parser';
 
+const EMETRA = 'http://consulta.muniguate.com/emetra/despliega.php';
+
 export const getEmetraInfo = async (type: string, number: string) => {
   const plate = new FormData();
   plate.append('tplaca', type);
   plate.append('nplaca', number);
-  const emetraRequest = await fetch(
-    'http://consulta.muniguate.com/emetra/despliega.php',
-    {
-      method: 'POST',
-      body: plate,
-    }
-  );
+  const emetraRequest = await fetch(EMETRA, {
+    method: 'POST',
+    body: plate,
+  });
   const htmlString = await emetraRequest.text();
 
   const plateString = `${type}-${number}`.toUpperCase();
