@@ -4,7 +4,7 @@ import toRem from '~/utils/to-rem';
 export const DefaultLayoutWrapper = styled.div``;
 
 export const DefaultLayoutContainer = styled.div`
-  margin: 0 auto;
+  margin: 0 auto ${toRem(100)};
   max-width: ${toRem(500)};
   padding: 0 ${toRem(16)};
 
@@ -29,6 +29,7 @@ export const DefaultLayoutFooter = styled.div`
   width: 100%;
   background: #fff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 100;
   a {
     display: block;
     flex-basis: 0;
