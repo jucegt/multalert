@@ -38,8 +38,5 @@
     "eslint": "^8.27.0",
     "remix-esbuild-override": "^3.0.4",
     "typescript": "^4.9.5"
-  },
-  "engines": {
-    "node": ">=14"
   }
 }
