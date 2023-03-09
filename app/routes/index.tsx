@@ -35,10 +35,10 @@ export default function Index() {
   return (
     <SplashLayout>
       <PlatesSplash />
-      <p>
+      <h2>
         Te <span>notificamos</span>
         <br /> cuando recibes una <br /> multa de tránsito <br /> de EMETRA
-      </p>
+      </h2>
       <div>
         <Link className="button" to="/vehiculos/agregar">
           Agregar vehiculo

@@ -8,9 +8,10 @@ export const SplashWrapper = styled.div`
   background: rgb(43, 88, 118);
   overflow-x: hidden;
   background: linear-gradient(180deg, #2b5876 0%, #4e4376 100%);
-  p {
+  h2 {
     font-size: 36px;
     font-family: 'Barlow';
+    font-weight: normal;
     color: #fff;
     span {
       color: #fa3e3e;
