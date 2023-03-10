@@ -1,12 +1,3 @@
-const { withEsbuildOverride } = require('remix-esbuild-override');
-const styledComponentsPlugin = require('./sc-plugin');
-
-withEsbuildOverride((option) => {
-  option.plugins.unshift(styledComponentsPlugin());
-
-  return option;
-});
-
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   ignoredRouteFiles: ['**/.*'],
