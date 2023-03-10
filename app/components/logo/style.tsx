@@ -39,7 +39,7 @@ export const LogoNotification = styled.span<{ number?: number }>`
   background: #eb5757;
   border-radius: 100%;
   display: block;
-  width: 14%;
+  width: 15%;
   box-shadow: 0 0 ${toRem(6)} rgba(0, 0, 0, 0.7);
   &:before {
     display: block;

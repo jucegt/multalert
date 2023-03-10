@@ -5,10 +5,11 @@ export const PlateWrapper = styled.div`
   aspect-ratio: 488/248;
   background: #fff;
   border-radius: ${toRem(12)};
-  box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 ${toRem(30)} rgba(0, 0, 0, 0.15),
+    0 ${toRem(45)} ${toRem(20)} ${toRem(-40)} rgba(0, 0, 0, 0.1);
   font-family: 'Barlow';
   margin: 0 auto;
-  width: ${toRem(300)};
+  width: 100%;
   &:before {
     background: repeating-linear-gradient(
       135deg,
@@ -29,7 +30,7 @@ export const PlateWrapper = styled.div`
     inset: ${toRem(10)};
     position: absolute;
   }
-  @media screen and (min-width: ${toRem(500)}) {
+  @media screen and (min-width: ${toRem(440)}) {
     width: ${toRem(400)};
   }
 `;
@@ -43,11 +44,11 @@ export const PlateContent = styled.div`
   padding: ${toRem(10)};
   text-align: center;
   z-index: 1;
-  font-size: ${toRem(60)};
+  font-size: 19.1vw;
   letter-spacing: ${toRem(-3)};
   &:before,
   &:after {
-    font-size: ${toRem(10)};
+    font-size: 3.62vw;
     font-weight: 700;
     letter-spacing: ${toRem(6)};
     padding: ${toRem(5)} 0;
@@ -56,7 +57,7 @@ export const PlateContent = styled.div`
     z-index: 1;
   }
   &:before {
-    background: #00f;
+    background: #2575fc;
     color: #fff;
     content: 'Guatemala';
     border-radius: ${toRem(2)} ${toRem(2)} 0 0;
@@ -65,7 +66,10 @@ export const PlateContent = styled.div`
     content: 'Centro América';
   }
 
-  @media screen and (min-width: ${toRem(500)}) {
+  @media screen and (max-width: ${toRem(319)}) {
+    font-size: ${toRem(60)};
+  }
+  @media screen and (min-width: ${toRem(440)}) {
     font-size: ${toRem(84)};
     &:before,
     &:after {
@@ -96,6 +100,7 @@ export const PlateType = styled.select`
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  letter-spacing: ${toRem(-2)};
   outline: none;
   padding: 0;
 `;
@@ -126,7 +131,7 @@ export const PlateNotification = styled.span`
   width: ${toRem(40)};
   height: ${toRem(40)};
   border-radius: ${toRem(40)};
-  background: #fa3e3e;
+  background: #eb5757;
   position: absolute;
   top: ${toRem(-15)};
   right: ${toRem(-15)};
