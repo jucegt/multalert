@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Title from '~/components/title';
 import VehiclesList from '~/components/vehicles';
 import { IVehicle } from '~/interfaces/IVehicle';
-import DefaultLayout from '~/layouts/default';
 
 export default function Vehicles() {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
@@ -15,9 +14,9 @@ export default function Vehicles() {
     }
   }, []);
   return (
-    <DefaultLayout>
+    <>
       <Title>Tus Vehículos</Title>
       <VehiclesList vehicles={vehicles} />
-    </DefaultLayout>
+    </>
   );
 }

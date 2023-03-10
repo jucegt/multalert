@@ -6,7 +6,6 @@ import Success from '~/components/success';
 import Title from '~/components/title';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
-import DefaultLayout from '~/layouts/default';
 import { getEmetraInfo } from '~/services/emetra';
 
 export const loader = async ({ params }: LoaderArgs) => {
@@ -45,7 +44,7 @@ export default function VehiclePlate() {
   }, [multas]);
 
   return (
-    <DefaultLayout>
+    <>
       <Title>{vehicle?.['vehicle-name'].toString()}</Title>
       <Plate notForm type={plateType} number={plateNumber} />
       <>
@@ -60,6 +59,6 @@ export default function VehiclePlate() {
           <Success>{multas?.multas?.toString()}</Success>
         )}
       </>
-    </DefaultLayout>
+    </>
   );
 }
