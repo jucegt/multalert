@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import Anchor from '~/components/anchor';
 import BigTitle from '~/components/big-title';
 import Button from '~/components/button';
+import ButtonGroup from '~/components/button-group';
 import PlatesSplash from '~/components/plates-splash';
 import IconDownload from '~/components/svgs/download';
+import IconVehicle from '~/components/svgs/vehicle';
 import useLocalStorage from '~/hooks/use-local-storage';
 import SplashLayout from '~/layouts/splash';
 
@@ -45,8 +47,8 @@ export default function Index() {
         <br /> multa de tránsito
         <br /> de <strong>EMETRA</strong>
       </BigTitle>
-      <div>
-        <Anchor href="/vehiculos/agregar" icon={<IconDownload />}>
+      <ButtonGroup>
+        <Anchor href="/vehiculos/agregar" icon={<IconVehicle />}>
           Agregar Vehículo
         </Anchor>
         {hideInstall ? null : (
@@ -58,7 +60,7 @@ export default function Index() {
             Instalar
           </Button>
         )}
-      </div>
+      </ButtonGroup>
     </SplashLayout>
   );
 }
