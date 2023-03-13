@@ -7,24 +7,24 @@ export const LogoWrapper = styled.div`
   letter-spacing: ${toRem(-2)};
   a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-color);
   }
 `;
 
 export const LogoHTag = styled.h1`
   margin: 0;
   font-size: inherit;
-  font-weight: normal;
-  text-shadow: 0 ${toRem(2)} ${toRem(2)} rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+  text-shadow: var(--text-shadow);
 `;
 
 export const LogoLight = styled.span`
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: ${toRem(-4)};
 `;
 
 export const LogoMedium = styled.span`
-  font-weight: normal;
+  font-weight: 400;
 `;
 
 export const LogoBold = styled.span`
@@ -45,7 +45,7 @@ export const LogoNotification = styled.span<{ number?: number }>`
     display: block;
     line-height: 0.3;
     content: '${(props) => props.number}';
-    font-weight: 900;
+    font-weight: 700;
     font-size: 0.3em;
     color: #fff;
     position: absolute;
