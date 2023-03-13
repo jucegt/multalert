@@ -3,7 +3,7 @@ import toRem from '~/utils/to-rem';
 import { PlateWrapper } from '../plate/style';
 
 export const PlatesSplashWrapper = styled.div`
-  margin: ${toRem(30)} ${toRem(-20)} -60%;
+  margin: 0 ${toRem(-20)} -60%;
   left: 50%;
   transform: scale(0.7) translateX(calc(-50% + 20px));
   transform-origin: top left;
@@ -23,6 +23,6 @@ export const PlatesSplashWrapper = styled.div`
   }
 
   @media screen and (min-width: ${toRem(500)}) {
-    margin: ${toRem(30)} 0 -42%;
+    margin: 0 0 -42%;
   }
 `;

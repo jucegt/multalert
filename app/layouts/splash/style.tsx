@@ -2,11 +2,38 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
 export const SplashWrapper = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  padding: ${toRem(40)};
+  display: flex;
+  flex-direction: column;
   background: var(--bg-color);
+  min-height: 100vh;
   overflow-x: hidden;
+  padding: ${toRem(40)};
+  width: 100vw;
+  &:before {
+    background: var(--bg-color);
+    box-shadow: ${toRem(-300)} ${toRem(150)} ${toRem(100)} ${toRem(100)}
+      rgba(235, 87, 87, 0.2);
+    content: '';
+    height: ${toRem(55)};
+    position: absolute;
+    right: ${toRem(-72)};
+    top: ${toRem(-27)};
+    width: ${toRem(100)};
+  }
+  &:after {
+    background: var(--bg-color);
+    bottom: ${toRem(-24)};
+    box-shadow: ${toRem(300)} ${toRem(-150)} ${toRem(100)} ${toRem(100)}
+      rgba(37, 117, 252, 0.2);
+    content: '';
+    height: ${toRem(130)};
+    left: ${toRem(-50)};
+    position: absolute;
+    width: ${toRem(58)};
+  }
+  > * {
+    z-index: 1;
+  }
   button,
   .button {
     text-decoration: none;
