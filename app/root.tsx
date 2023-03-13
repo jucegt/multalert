@@ -74,7 +74,10 @@ export default function App() {
     const isDarkMode = window.matchMedia(
       '(prefers-color-scheme: dark)'
     ).matches;
-    if (isDarkMode) setTheme('dark', 365);
+    const themeMode = isDarkMode ? 'dark' : 'light';
+    if (theme !== themeMode) {
+      setTheme(themeMode, 365);
+    }
   }, []);
 
   return (
