@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { useLocation, useMatches } from '@remix-run/react';
+import { useLoaderData, useLocation, useMatches } from '@remix-run/react';
 import {
   Links,
   LiveReload,
@@ -12,14 +12,29 @@ import {
 
 import GlobalStyles from '~/components/global';
 import Icons from './components/icons';
+import useCookie from './hooks/use-cookie';
+import { LoaderFunction } from '@remix-run/node';
 
 export { links } from '~/configs/links';
 export { meta } from '~/configs/meta-data';
 let isMount = true;
 
+export const loader: LoaderFunction = async ({ request }) => {
+  const cookies = request.headers.get('Cookie');
+  const cookieList = cookies?.split(';');
+  const cookieTheme = cookieList?.find((cookie) =>
+    cookie.includes('_ma-theme=')
+  );
+  const themeSlpit = cookieTheme?.split('=');
+  const theme = themeSlpit?.[themeSlpit?.length - 1];
+  return { theme };
+};
+
 export default function App() {
-  let location = useLocation();
-  let matches = useMatches();
+  const location = useLocation();
+  const matches = useMatches();
+  const { theme } = useLoaderData<typeof loader>();
+  const [maTheme, setTheme] = useCookie('_ma-theme', 'light');
 
   useEffect(() => {
     let mounted = isMount;
@@ -55,8 +70,15 @@ export default function App() {
     }
   }, [location]);
 
+  useEffect(() => {
+    const isDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    if (isDarkMode) setTheme('dark', 365);
+  }, []);
+
   return (
-    <html lang="es">
+    <html lang="es" className={theme || maTheme}>
       <head>
         <Meta />
         <Links />

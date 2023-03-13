@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
     --text-highlighted: ${colors.red};
     --text-shadow: none;
 	}
-  .dark-mode {
+  .dark {
     :root {
       --bg-box-light: ${colors.darkBoxLight};
       --bg-box: ${colors.darkBox};
