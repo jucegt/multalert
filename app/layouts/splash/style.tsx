@@ -9,6 +9,32 @@ export const SplashWrapper = styled.div`
   overflow-x: hidden;
   padding: ${toRem(40)};
   width: 100vw;
+  button,
+  .button {
+    align-items: center;
+    background: #fff;
+    border-radius: 100px;
+    border: none;
+    color: #000;
+    display: inline-flex;
+    font-family: 'Barlow';
+    font-size: 18px;
+    font-weight: 700;
+    height: 60px;
+    margin: 0 10px;
+    padding: 0 30px;
+    text-decoration: none;
+  }
+`;
+
+export const SplashBackground = styled.div`
+  height: 100vh;
+  left: 50%;
+  max-width: ${toRem(500)};
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
   &:before {
     background: var(--bg-color);
     box-shadow: ${toRem(-300)} ${toRem(150)} ${toRem(100)} ${toRem(100)}
@@ -31,29 +57,10 @@ export const SplashWrapper = styled.div`
     position: absolute;
     width: ${toRem(58)};
   }
-  > * {
-    z-index: 1;
-  }
-  button,
-  .button {
-    text-decoration: none;
-    color: #000;
-    display: inline-flex;
-    align-items: center;
-    border: none;
-    background: #fff;
-    border-radius: 100px;
-    height: 60px;
-    padding: 0 30px;
-    margin: 0 10px;
-    font-family: 'Barlow';
-    font-weight: 700;
-    font-size: 18px;
-  }
 `;
 
 export const SplashContent = styled.div`
-  max-width: 500px;
+  max-width: ${toRem(500)};
   margin: 0 auto;
   height: 100%;
   display: flex;
