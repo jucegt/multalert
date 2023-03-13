@@ -44,16 +44,13 @@ export const SplashBackground = styled.div`
 `;
 
 export const SplashContent = styled.div`
+  width: 100%;
   max-width: ${toRem(500)};
   margin: 0 auto;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const SplashInfo = styled.small`
-  margin-top: auto;
-  margin-bottom: 0;
   display: block;
   color: var(--text-color);
   opacity: 0.4;
@@ -61,4 +58,6 @@ export const SplashInfo = styled.small`
   font-weight: 400;
   font-size: ${toRem(12)};
   line-height: ${toRem(14)};
+  max-width: ${toRem(500)};
+  margin: auto auto 0;
 `;
