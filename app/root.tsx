@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { LoaderFunction } from '@remix-run/node';
 import { useLoaderData, useLocation, useMatches } from '@remix-run/react';
 import {
   Links,
@@ -13,7 +14,6 @@ import {
 import GlobalStyles from '~/components/global';
 import Icons from './components/icons';
 import useCookie from './hooks/use-cookie';
-import { LoaderFunction } from '@remix-run/node';
 
 export { links } from '~/configs/links';
 export { meta } from '~/configs/meta-data';
