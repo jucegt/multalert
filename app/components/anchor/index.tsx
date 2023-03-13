@@ -7,7 +7,7 @@ const Anchor = ({ href, variant = 'primary', icon, children }: IAnchor) => {
     <AnchorWrapper variant={variant} as="div">
       <Link to={href}>
         {icon}
-        <AnchorText>{children}</AnchorText>
+        {children ? <AnchorText>{children}</AnchorText> : null}
       </Link>
     </AnchorWrapper>
   );
