@@ -1,7 +1,9 @@
 import { Link, useNavigate } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import BigTitle from '~/components/big-title';
+import Button from '~/components/button';
 import PlatesSplash from '~/components/plates-splash';
+import IconDownload from '~/components/svgs/download';
 import useLocalStorage from '~/hooks/use-local-storage';
 import SplashLayout from '~/layouts/splash';
 
@@ -46,7 +48,15 @@ export default function Index() {
         <Link className="button" to="/vehiculos/agregar">
           Agregar vehiculo
         </Link>
-        {hideInstall ? null : <button onClick={handleClick}>Instalar</button>}
+        {hideInstall ? null : (
+          <Button
+            variant="secondary"
+            icon={<IconDownload />}
+            onClick={handleClick}
+          >
+            Instalar
+          </Button>
+        )}
       </div>
     </SplashLayout>
   );
