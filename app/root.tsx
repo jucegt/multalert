@@ -1,7 +1,6 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { useLocation, useMatches } from '@remix-run/react';
-import type { MetaFunction, LinksFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -10,34 +9,19 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+
 import GlobalStyles from '~/components/global';
 import Icons from './components/icons';
 
+export { links } from '~/configs/links';
+export { meta } from '~/configs/meta-data';
 let isMount = true;
-
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title:
-    'multalert - Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
-  viewport: 'width=device-width,initial-scale=1',
-});
-
-export const links: LinksFunction = () => [
-  {
-    rel: 'manifest',
-    href: '/resources/manifest.webmanifest',
-  },
-  {
-    rel: 'stylesheet',
-    href: '/styles/fonts.css',
-  },
-];
 
 export default function App() {
   let location = useLocation();
   let matches = useMatches();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let mounted = isMount;
     isMount = false;
     if ('serviceWorker' in navigator) {
