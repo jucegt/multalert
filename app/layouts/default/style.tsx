@@ -37,7 +37,7 @@ export const DefaultLayoutFooter = styled.div`
     flex-shrink: 1;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
