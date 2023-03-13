@@ -9,22 +9,6 @@ export const SplashWrapper = styled.div`
   overflow-x: hidden;
   padding: ${toRem(40)};
   width: 100vw;
-  button,
-  .button {
-    align-items: center;
-    background: #fff;
-    border-radius: 100px;
-    border: none;
-    color: #000;
-    display: inline-flex;
-    font-family: 'Barlow';
-    font-size: 18px;
-    font-weight: 700;
-    height: 60px;
-    margin: 0 10px;
-    padding: 0 30px;
-    text-decoration: none;
-  }
 `;
 
 export const SplashBackground = styled.div`
