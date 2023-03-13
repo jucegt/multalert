@@ -1,5 +1,6 @@
-import { Link, useNavigate } from '@remix-run/react';
+import { useNavigate } from '@remix-run/react';
 import { useEffect, useState } from 'react';
+import Anchor from '~/components/anchor';
 import BigTitle from '~/components/big-title';
 import Button from '~/components/button';
 import PlatesSplash from '~/components/plates-splash';
@@ -45,9 +46,9 @@ export default function Index() {
         <br /> de <strong>EMETRA</strong>
       </BigTitle>
       <div>
-        <Link className="button" to="/vehiculos/agregar">
-          Agregar vehiculo
-        </Link>
+        <Anchor href="/vehiculos/agregar" icon={<IconDownload />}>
+          Agregar Vehículo
+        </Anchor>
         {hideInstall ? null : (
           <Button
             variant="secondary"
