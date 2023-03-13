@@ -3,20 +3,10 @@ import toRem from '~/utils/to-rem';
 
 export const SplashWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
-  padding: ${toRem(16)};
-  background: rgb(43, 88, 118);
+  min-height: 100vh;
+  padding: ${toRem(40)};
+  background: var(--bg-color);
   overflow-x: hidden;
-  background: linear-gradient(180deg, #2b5876 0%, #4e4376 100%);
-  h2 {
-    font-size: 36px;
-    font-family: 'Barlow';
-    font-weight: normal;
-    color: #fff;
-    span {
-      color: #fa3e3e;
-    }
-  }
   button,
   .button {
     text-decoration: none;
@@ -33,14 +23,6 @@ export const SplashWrapper = styled.div`
     font-weight: 700;
     font-size: 18px;
   }
-  small {
-    margin-top: auto;
-    margin-bottom: 0;
-    display: block;
-    color: #fff;
-    opacity: 0.4;
-    font-family: 'Barlow';
-  }
 `;
 
 export const SplashContent = styled.div`
@@ -49,4 +31,16 @@ export const SplashContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+export const SplashInfo = styled.small`
+  margin-top: auto;
+  margin-bottom: 0;
+  display: block;
+  color: var(--text-color);
+  opacity: 0.4;
+  font-family: 'Barlow';
+  font-weight: 400;
+  font-size: ${toRem(12)};
+  line-height: ${toRem(14)};
 `;

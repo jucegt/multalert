@@ -1,6 +1,6 @@
 import Logo from '~/components/logo';
 import { IChildren } from '~/interfaces/IChildren';
-import { SplashContent, SplashWrapper } from './style';
+import { SplashContent, SplashInfo, SplashWrapper } from './style';
 
 const SplashLayout = ({ children }: IChildren) => {
   return (
@@ -8,6 +8,10 @@ const SplashLayout = ({ children }: IChildren) => {
       <SplashContent>
         <Logo />
         {children}
+        <SplashInfo>
+          No almacenamos nada información en servidores, toda la información se
+          almacena en tu dispositivo.
+        </SplashInfo>
       </SplashContent>
     </SplashWrapper>
   );

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from '@remix-run/react';
 import { useEffect, useState } from 'react';
+import BigTitle from '~/components/big-title';
 import PlatesSplash from '~/components/plates-splash';
 import useLocalStorage from '~/hooks/use-local-storage';
 import SplashLayout from '~/layouts/splash';
@@ -35,20 +36,18 @@ export default function Index() {
   return (
     <SplashLayout>
       <PlatesSplash />
-      <h2>
+      <BigTitle>
         Te <span>notificamos</span>
-        <br /> cuando recibes una <br /> multa de tránsito <br /> de EMETRA
-      </h2>
+        <br /> cuando recibes una
+        <br /> multa de tránsito
+        <br /> de <strong>EMETRA</strong>
+      </BigTitle>
       <div>
         <Link className="button" to="/vehiculos/agregar">
           Agregar vehiculo
         </Link>
         {hideInstall ? null : <button onClick={handleClick}>Instalar</button>}
       </div>
-      <small>
-        Esta aplicación es segura, ya que no almacenamos ninguna información en
-        servidores, toda la información se almacena en tu dispositivo.
-      </small>
     </SplashLayout>
   );
 }
