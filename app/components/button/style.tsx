@@ -12,7 +12,7 @@ export const ButtonWrapper = styled.button<IButtonWrapper>`
   background: ${(props) => bgVariants(props.variant)};
   box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
   border-radius: ${toRem(8)};
-  color: var(--text-color);
+  color: var(--white);
   border: none;
   font-weight: 700;
   padding: ${toRem(16)} ${toRem(18)};
@@ -29,4 +29,5 @@ export const ButtonWrapper = styled.button<IButtonWrapper>`
 export const ButtonText = styled.span`
   font-size: ${toRem(16)};
   line-height: ${toRem(24)};
+  letter-spacing: ${toRem(-0.1)};
 `;

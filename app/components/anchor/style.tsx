@@ -9,9 +9,10 @@ export const AnchorWrapper = styled(ButtonWrapper)<IButtonWrapper>`
   a {
     display: inline-flex;
     padding: ${toRem(16)} ${toRem(18)};
-    color: var(--text-color);
+    color: var(--white);
     text-decoration: none;
     gap: ${toRem(10)};
+    align-items: center;
   }
 `;
 

@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
     --text-color: ${colors.gray};
     --text-highlighted: ${colors.red};
     --text-shadow: none;
+    --white: ${colors.white};
 	}
   .dark {
     :root {
