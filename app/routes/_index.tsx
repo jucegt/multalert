@@ -1,5 +1,6 @@
 import { useNavigate } from '@remix-run/react';
 import { useEffect, useState } from 'react';
+
 import Anchor from '~/components/anchor';
 import BigTitle from '~/components/big-title';
 import Button from '~/components/button';
@@ -7,7 +8,9 @@ import ButtonGroup from '~/components/button-group';
 import PlatesSplash from '~/components/plates-splash';
 import IconDownload from '~/components/svgs/download';
 import IconVehicle from '~/components/svgs/vehicle';
+
 import useLocalStorage from '~/hooks/use-local-storage';
+
 import SplashLayout from '~/layouts/splash';
 
 export default function Index() {
