@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 import { IButtonWrapper, TVariants } from './types';
 
-const bgVariants = (variant: TVariants) => {
+export const bgVariants = (variant: TVariants) => {
   if (variant === 'primary') return 'var(--bg-button)';
   if (variant === 'secondary') return 'var(--bg-button-secondary)';
   if (variant === 'cancel') return 'var(--bg-button-cancel)';
