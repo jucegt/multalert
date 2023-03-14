@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
-export const SuccessWrapper = styled.p`
-  background: #3aab58;
-  padding: ${toRem(10)} ${toRem(16)};
-  border-radius: ${toRem(4)};
+export const SuccessWrapper = styled.div`
+  background: var(--bg-success);
+  padding: ${toRem(40)} ${toRem(20)} ${toRem(20)};
+  border-radius: ${toRem(6)};
+  margin: ${toRem(-20)} auto ${toRem(20)};
+  max-width: ${toRem(400)};
+`;
+
+export const SuccessText = styled.p`
+  color: var(--white);
+  font-size: ${toRem(18)};
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 ${toRem(2)} ${toRem(2)} rgba(0, 0, 0, 0.25);
 `;

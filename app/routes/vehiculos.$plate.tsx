@@ -5,6 +5,7 @@ import Plate from '~/components/plate';
 import Success from '~/components/success';
 import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
+import Warning from '~/components/warning';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
 import { getEmetraInfo } from '~/services/emetra';
@@ -52,8 +53,14 @@ export default function VehiclePlate() {
         {vehicle?.['vehicle-name'].toString()}
       </Title>
       <Plate notForm type={plateType} number={plateNumber} />
+      {data?.message ? (
+        data.total ? (
+          <Warning>{data.message}</Warning>
+        ) : (
+          <Success>{data.message}</Success>
+        )
+      ) : null}
       <div style={{ color: '#fff' }}>
-        {data?.message ? <p>{data.message}</p> : null}
         {data?.info ? <p>{data.info}</p> : null}
         {data?.fines
           ? data.fines.map(({ fecha, lugar, costo }, index) => (

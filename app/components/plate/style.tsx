@@ -10,6 +10,7 @@ export const PlateWrapper = styled.div`
   font-family: 'Barlow';
   margin: 0 auto;
   width: 100%;
+  z-index: 2;
   &:before {
     background: repeating-linear-gradient(
       135deg,
