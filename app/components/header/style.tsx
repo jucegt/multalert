@@ -5,12 +5,13 @@ import { LogoWrapper } from '../logo/style';
 
 export const HeaderWrapper = styled.header`
   align-items: center;
-  background: var(--bg-box-light);
+  background: var(--bg-box-light-blur);
+  backdrop-filter: blur(${toRem(8)});
   border-radius: ${toRem(6)};
   box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-15)} rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: space-between;
   height: ${toRem(60)};
+  justify-content: space-between;
   margin: ${toRem(20)} ${toRem(20)} ${toRem(30)};
   max-width: ${toRem(500)};
   padding: ${toRem(10)};

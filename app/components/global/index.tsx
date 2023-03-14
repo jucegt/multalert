@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Barlow';
     --primary-gradient: ${colors.defaultGradient};
     --bg-box-light: ${colors.lightBoxLight};
+    --bg-box-light-blur: ${colors.lightBoxLightBlur};
     --bg-box: ${colors.lightBox};
     --bg-button-cancel: ${colors.cancelGradientLight};
     --bg-button-secondary: ${colors.red};
@@ -28,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
   .dark {
     :root {
       --bg-box-light: ${colors.darkBoxLight};
+      --bg-box-light-blur: ${colors.darkBoxLightBlur};
       --bg-box: ${colors.darkBox};
       --bg-button-cancel: ${colors.cancelGradientDark};
       --bg-color: ${colors.darkBlue};
