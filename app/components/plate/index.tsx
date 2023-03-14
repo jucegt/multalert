@@ -10,15 +10,6 @@ import {
 import { IPlate } from './types';
 
 const Plate = ({ notForm, type, number, noti }: IPlate) => {
-  const [notification, setNotification] = useState(noti ?? 0);
-
-  useEffect(() => {
-    const tieneMultas = localStorage.getItem(
-      `${type?.toLowerCase()}-${number?.toLowerCase()}`
-    );
-
-    if (tieneMultas) setNotification(Number(tieneMultas));
-  }, []);
   return (
     <PlateWrapper>
       <PlateContent>
@@ -50,9 +41,7 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
           </PlateNumber>
         </PlateValue>
       </PlateContent>
-      {notification ? (
-        <PlateNotification>{notification}</PlateNotification>
-      ) : null}
+      {noti ? <PlateNotification>{noti}</PlateNotification> : null}
     </PlateWrapper>
   );
 };
