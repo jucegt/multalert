@@ -8,6 +8,7 @@ export const NavWrapper = styled.nav`
   margin: auto 0 0;
   position: sticky;
   right: 0;
+  z-index: 20;
 `;
 
 export const NavList = styled.ul`

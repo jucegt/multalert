@@ -16,6 +16,7 @@ export const HeaderWrapper = styled.header`
   padding: ${toRem(10)};
   position: sticky;
   top: ${toRem(20)};
+  z-index: 20;
   ${LogoWrapper} {
     font-size: ${toRem(26.5)};
     margin-left: ${toRem(10)};
@@ -33,5 +34,6 @@ export const HeaderWrapper = styled.header`
   }
   @media screen and (min-width: ${toRem(540)}) {
     margin: ${toRem(20)} auto ${toRem(30)};
+    width: 100%;
   }
 `;
