@@ -25,7 +25,7 @@ const SaveVehicle = () => {
     if (vehicleExist.length) {
       setDuplicated(vehicleExist[0]);
     } else {
-      setVehicles([...vehicles, vehicle]);
+      setVehicles([vehicle, ...vehicles]);
       navigate(
         `/vehiculos/${vehicle['plate-type'].toString().toLowerCase()}-${vehicle[
           'plate-number'
