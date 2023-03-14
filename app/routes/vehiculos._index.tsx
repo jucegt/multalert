@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
 import VehiclesList from '~/components/vehicles';
 import { IVehicle } from '~/interfaces/IVehicle';
@@ -15,7 +16,7 @@ export default function Vehicles() {
   }, []);
   return (
     <>
-      <Title>Tus Vehículos</Title>
+      <Title icon={<IconVehicle />}>Mis Vehículos</Title>
       <VehiclesList vehicles={vehicles} />
     </>
   );

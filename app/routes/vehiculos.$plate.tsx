@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import Plate from '~/components/plate';
 import Success from '~/components/success';
+import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
@@ -45,7 +46,9 @@ export default function VehiclePlate() {
 
   return (
     <>
-      <Title>{vehicle?.['vehicle-name'].toString()}</Title>
+      <Title icon={<IconVehicle />}>
+        {vehicle?.['vehicle-name'].toString()}
+      </Title>
       <Plate notForm type={plateType} number={plateNumber} />
       <>
         {multas?.info ? <p>{multas.info}</p> : null}
