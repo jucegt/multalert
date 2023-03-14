@@ -9,7 +9,7 @@ export const DefaultLayoutWrapper = styled.div`
 
 export const DefaultLayoutContainer = styled.div`
   margin: 0 auto;
-  max-width: ${toRem(500)};
+  max-width: ${toRem(540)};
   width: 100%;
   padding: 0 ${toRem(20)};
 `;
