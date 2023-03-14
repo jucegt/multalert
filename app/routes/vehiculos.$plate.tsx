@@ -14,15 +14,15 @@ export const loader = async ({ params }: LoaderArgs) => {
   const plateType = plateSplit?.[0];
   const plateNumber = plateSplit?.[1];
   if (plateType && plateNumber) {
-    const multas = await getEmetraInfo(plateType, plateNumber);
+    const fines = await getEmetraInfo(plateType, plateNumber);
 
-    return multas;
+    return fines;
   }
   return null;
 };
 
 export default function VehiclePlate() {
-  const multas = useLoaderData<typeof loader>();
+  const data = useLoaderData<typeof loader>();
   const [vehicles] = useLocalStorage<IVehicle[]>('vehicles', []);
   const { plate } = useParams();
   const [, setNotificacion] = useLocalStorage<number>(`${plate}`, 0);
@@ -32,17 +32,19 @@ export default function VehiclePlate() {
   const plateNumber = plateSplit?.[1].toUpperCase();
 
   useEffect(() => {
-    const vehicleInfo = vehicles.find(
-      (vehicle) =>
-        vehicle['plate-type'] === plateType &&
-        vehicle['plate-number'].toString().toUpperCase() === plateNumber
-    );
-    if (vehicleInfo) setVehicle(vehicleInfo);
+    if (vehicles) {
+      const vehicleInfo = vehicles.find(
+        (vehicle) =>
+          vehicle['plate-type'] === plateType &&
+          vehicle['plate-number'].toString().toUpperCase() === plateNumber
+      );
+      if (vehicleInfo) setVehicle(vehicleInfo);
+    }
   }, [vehicles]);
 
   useEffect(() => {
-    if (multas?.tieneMultas) setNotificacion(multas.multas.length);
-  }, [multas]);
+    if (data?.total) setNotificacion(data.total);
+  }, [data]);
 
   return (
     <>
@@ -50,18 +52,19 @@ export default function VehiclePlate() {
         {vehicle?.['vehicle-name'].toString()}
       </Title>
       <Plate notForm type={plateType} number={plateNumber} />
-      <>
-        {multas?.info ? <p>{multas.info}</p> : null}
-        {multas?.tieneMultas ? (
-          <ul>
-            {multas.multas.map((multa, index) => (
-              <li key={index}>{multa}</li>
-            ))}
-          </ul>
-        ) : (
-          <Success>{multas?.multas?.toString()}</Success>
-        )}
-      </>
+      <div style={{ color: '#fff' }}>
+        {data?.message ? <p>{data.message}</p> : null}
+        {data?.info ? <p>{data.info}</p> : null}
+        {data?.fines
+          ? data.fines.map(({ fecha, lugar, costo }, index) => (
+              <div key={index}>
+                <p>Fecha y Hora: {fecha}</p>
+                <p>Lugar: {lugar}</p>
+                <p>Costo: {costo}</p>
+              </div>
+            ))
+          : null}
+      </div>
     </>
   );
 }
