@@ -1,8 +1,13 @@
-import { IChildren } from '~/interfaces/IChildren';
 import { TitleWrapper } from './style';
+import { ITitle } from './types';
 
-const Title = ({ children }: IChildren) => {
-  return <TitleWrapper>{children}</TitleWrapper>;
+const Title = ({ icon, children }: ITitle) => {
+  return (
+    <TitleWrapper>
+      {icon}
+      {children}
+    </TitleWrapper>
+  );
 };
 
 export default Title;
