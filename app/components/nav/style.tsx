@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
 export const NavWrapper = styled.nav`
-  background: var(--bg-box-light);
+  background: var(--bg-box-light-blur);
+  backdrop-filter: blur(${toRem(8)});
   bottom: 0;
   left: 0;
   margin: auto 0 0;
