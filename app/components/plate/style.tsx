@@ -105,6 +105,7 @@ export const PlateType = styled.select`
   outline: none;
   padding: 0;
   order: 1;
+  transition: all ease 0.3s;
 `;
 
 export const PlateNumber = styled(PlateType)`
@@ -119,7 +120,6 @@ export const PlateNumber = styled(PlateType)`
     }
   }
   &:focus {
-    opacity: 1;
     ::-webkit-input-placeholder {
       background: #fff;
     }

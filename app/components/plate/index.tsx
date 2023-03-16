@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { types } from '~/data/plate-types.json';
+
 import {
   PlateContent,
   PlateNotification,
@@ -19,7 +20,7 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
             name="plate-number"
             id="plate-number"
             type="text"
-            placeholder="987ABC"
+            placeholder="987MAT"
             maxLength={6}
           >
             {notForm ? number : null}
@@ -29,16 +30,13 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
             name="plate-type"
             id="plate-type"
           >
-            {notForm ? (
-              type
-            ) : (
-              <>
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="C">C</option>
-                <option value="U">U</option>
-              </>
-            )}
+            {notForm
+              ? type
+              : types.map((plate) => (
+                  <option key={plate} value={plate}>
+                    {plate}
+                  </option>
+                ))}
           </PlateType>
         </PlateValue>
       </PlateContent>
