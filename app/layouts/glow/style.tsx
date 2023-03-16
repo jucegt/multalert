@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import toRem from '~/utils/to-rem';
+
+const rotate360 = keyframes`
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+`;
 
 export const GlowBackground = styled.div`
   height: 100vh;
@@ -9,6 +18,7 @@ export const GlowBackground = styled.div`
   top: 0;
   transform: translateX(-50%);
   width: 100vw;
+  animation: ${rotate360} 100s linear infinite;
   &:before,
   &:after {
     content: '';
