@@ -2,8 +2,13 @@ import { useNavigate } from '@remix-run/react';
 import { useState } from 'react';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
+import Button from '../button';
+import ButtonGroup from '../button-group';
+import Input from '../form-element/input';
+import Label from '../form-element/label';
 import Plate from '../plate';
-import { ButtonWrapper, InputWrapper, WarningText } from './style';
+import IconVehicle from '../svgs/vehicle';
+import { SaveVehicleForm } from './style';
 
 const SaveVehicle = () => {
   const navigate = useNavigate();
@@ -36,22 +41,37 @@ const SaveVehicle = () => {
     }
   };
   return (
-    <form method="post" onSubmit={handleSubmit}>
+    <SaveVehicleForm method="post" onSubmit={handleSubmit}>
       {duplicated?.['vehicle-name'] ? (
-        <WarningText>
-          <>
-            El vehiculo que estas intentando guardar ya esta guardado con el
-            nombre de {duplicated['vehicle-name']}
-          </>
-        </WarningText>
+        <>
+          El vehiculo que estas intentando guardar ya esta guardado con el
+          nombre de {duplicated['vehicle-name']}
+        </>
       ) : null}
-      <InputWrapper>
-        <label htmlFor="vehicle-name">Nombre:</label>
-        <input type="text" id="vehicle-name" name="vehicle-name" />
-      </InputWrapper>
+      <Label htmlFor="vehicle-name" required>
+        Nombre:
+      </Label>
+      <Input
+        placeholder="Ej.: Rayo McQueen"
+        type="text"
+        id="vehicle-name"
+        name="vehicle-name"
+      />
+      <Label
+        htmlFor="plate-number"
+        required
+        description="Toca el tipo o número de placa para editar"
+      >
+        Placa:
+      </Label>
       <Plate />
-      <ButtonWrapper>Guardar</ButtonWrapper>
-    </form>
+      <ButtonGroup>
+        <Button variant="cancel" icon={<IconVehicle />} type="reset">
+          Cancelar
+        </Button>
+        <Button icon={<IconVehicle />}>Guardar Vehículo</Button>
+      </ButtonGroup>
+    </SaveVehicleForm>
   );
 };
 
