@@ -14,6 +14,16 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
     <PlateWrapper>
       <PlateContent>
         <PlateValue>
+          <PlateNumber
+            as={notForm ? 'span' : 'input'}
+            name="plate-number"
+            id="plate-number"
+            type="text"
+            placeholder="987ABC"
+            maxLength={6}
+          >
+            {notForm ? number : null}
+          </PlateNumber>
           <PlateType
             as={notForm ? 'span' : 'select'}
             name="plate-type"
@@ -30,15 +40,6 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
               </>
             )}
           </PlateType>
-          <PlateNumber
-            as={notForm ? 'span' : 'input'}
-            name="plate-number"
-            type="text"
-            placeholder="987ABC"
-            maxLength={6}
-          >
-            {notForm ? number : null}
-          </PlateNumber>
         </PlateValue>
       </PlateContent>
       {noti ? <PlateNotification>{noti}</PlateNotification> : null}

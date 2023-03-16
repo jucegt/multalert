@@ -104,13 +104,22 @@ export const PlateType = styled.select`
   letter-spacing: ${toRem(-2)};
   outline: none;
   padding: 0;
+  order: 1;
 `;
 
 export const PlateNumber = styled(PlateType)`
   width: 100%;
   text-align: right;
   text-transform: uppercase;
+  order: 2;
+  &:placeholder-shown {
+    opacity: 0.2;
+    & ~ ${PlateType} {
+      opacity: 0.2;
+    }
+  }
   &:focus {
+    opacity: 1;
     ::-webkit-input-placeholder {
       background: #fff;
     }
