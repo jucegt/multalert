@@ -6,4 +6,5 @@ export interface ILabel extends TDefaultTypes {
   required?: boolean;
   description?: string;
   component?: React.ReactNode;
+  disabled?: boolean;
 }

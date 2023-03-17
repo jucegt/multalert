@@ -7,6 +7,7 @@ export const InputWrapper = styled.input`
   border-radius: ${toRem(6)};
   border: 0;
   color: var(--text-color);
+  display: block;
   font-size: ${toRem(16)};
   height: ${toRem(46)};
   line-height: ${toRem(20)};
@@ -36,5 +37,9 @@ export const InputWrapper = styled.input`
   &:active {
     outline: ${toRem(2)} solid var(---decoration-color, ${colors.blue});
     outline-offset: ${toRem(2)};
+  }
+  &:disabled {
+    outline-color: transparent;
+    opacity: 0.2;
   }
 `;
