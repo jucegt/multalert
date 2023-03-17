@@ -1,3 +1,9 @@
 export interface IVehicle {
-  [k: string]: FormDataEntryValue;
+  [k: string]:
+    | FormDataEntryValue
+    | string
+    | number
+    | undefined
+    | null
+    | boolean;
 }
