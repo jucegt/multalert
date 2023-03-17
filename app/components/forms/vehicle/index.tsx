@@ -43,7 +43,6 @@ const VehicleForm = () => {
   };
   return (
     <VehicleFormWrapper method="post" onSubmit={handleSubmit}>
-      {JSON.stringify(duplicated)}
       <VehicleInfo />
       <VehicleConfig />
       <ButtonGroup>
@@ -52,6 +51,9 @@ const VehicleForm = () => {
         </Button>
         <Button icon={<IconVehicle />}>Guardar Vehículo</Button>
       </ButtonGroup>
+      <div style={{ color: '#fff', margin: '30px 0' }}>
+        {JSON.stringify(duplicated)}
+      </div>
     </VehicleFormWrapper>
   );
 };

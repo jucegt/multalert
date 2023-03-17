@@ -1,18 +1,17 @@
 import styled from 'styled-components';
-import toRem from '~/utils/to-rem';
-import { bgVariants, ButtonText, ButtonWrapper } from '../button/style';
-import { IButtonWrapper } from '../button/types';
 
-export const AnchorWrapper = styled(ButtonWrapper)<IButtonWrapper>`
-  background: ${(props) => bgVariants(props.variant)};
-  padding: 0;
+import {
+  bgVariants,
+  ButtonStyles,
+  ButtonText,
+} from '~/components/button/style';
+import { IButtonWrapper } from '~/components/button/types';
+
+export const AnchorWrapper = styled.div<IButtonWrapper>`
   a {
-    display: inline-flex;
-    padding: ${toRem(16)} ${toRem(18)};
-    color: var(--white);
     text-decoration: none;
-    gap: ${toRem(10)};
-    align-items: center;
+    background: ${(props) => bgVariants(props.variant)};
+    ${ButtonStyles}
   }
 `;
 

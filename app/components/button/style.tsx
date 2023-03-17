@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import toRem from '~/utils/to-rem';
 import { IButtonWrapper, TVariants } from './types';
 
@@ -8,8 +8,7 @@ export const bgVariants = (variant: TVariants) => {
   if (variant === 'cancel') return 'var(--bg-button-cancel)';
 };
 
-export const ButtonWrapper = styled.button<IButtonWrapper>`
-  background: ${(props) => bgVariants(props.variant)};
+export const ButtonStyles = css`
   box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
   border-radius: ${toRem(8)};
   color: var(--white);
@@ -24,6 +23,11 @@ export const ButtonWrapper = styled.button<IButtonWrapper>`
     max-width: ${toRem(24)};
     height: ${toRem(24)};
   }
+`;
+
+export const ButtonWrapper = styled.button<IButtonWrapper>`
+  background: ${(props) => bgVariants(props.variant)};
+  ${ButtonStyles}
 `;
 
 export const ButtonText = styled.span`
