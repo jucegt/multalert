@@ -1,4 +1,5 @@
 import {
+  SwitchCustom,
   SwitchInput,
   SwitchOff,
   SwitchOn,
@@ -13,10 +14,11 @@ const Switch = ({ values, ...props }: ISwitch) => {
       <SwitchInput {...props} type="checkbox" />
       {values ? (
         <SwitchStatus>
-          <SwitchOn>{values.on}</SwitchOn>
           <SwitchOff>{values.off}</SwitchOff>
+          <SwitchOn>{values.on}</SwitchOn>
         </SwitchStatus>
       ) : null}
+      <SwitchCustom />
     </SwitchWrapper>
   );
 };
