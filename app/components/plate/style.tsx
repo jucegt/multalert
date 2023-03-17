@@ -113,6 +113,18 @@ export const PlateNumber = styled(PlateType)`
   text-align: right;
   text-transform: uppercase;
   order: 2;
+  &::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+  }
   &:placeholder-shown {
     opacity: 0.2;
     & ~ ${PlateType} {
@@ -120,19 +132,56 @@ export const PlateNumber = styled(PlateType)`
     }
   }
   &:focus {
-    ::-webkit-input-placeholder {
+    &::-webkit-input-placeholder {
       background: #fff;
+      opacity: 0;
     }
-    ::-moz-placeholder {
+    &::-moz-placeholder {
       background: #fff;
+      opacity: 0;
+    }
+    &:-ms-input-placeholder {
+      background: #fff;
+      opacity: 0;
+    }
+    &:-moz-placeholder {
+      background: #fff;
+      opacity: 0;
+    }
+  }
+
+  @-moz-document url-prefix() {
+    &:placeholder-shown {
       opacity: 1;
-    }
-    :-ms-input-placeholder {
-      background: #fff;
-    }
-    :-moz-placeholder {
-      background: #fff;
-      opacity: 1;
+      &::-webkit-input-placeholder {
+        opacity: 0.2;
+      }
+      &::-moz-placeholder {
+        opacity: 0.2;
+      }
+      &:-ms-input-placeholder {
+        opacity: 0.2;
+      }
+      &:-moz-placeholder {
+        opacity: 0.2;
+      }
+      & ~ ${PlateType} {
+        opacity: 0.2;
+      }
+      &:focus {
+        &::-webkit-input-placeholder {
+          opacity: 0;
+        }
+        &::-moz-placeholder {
+          opacity: 0;
+        }
+        &:-ms-input-placeholder {
+          opacity: 0;
+        }
+        &:-moz-placeholder {
+          opacity: 0;
+        }
+      }
     }
   }
 `;
