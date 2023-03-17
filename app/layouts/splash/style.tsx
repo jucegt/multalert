@@ -7,7 +7,7 @@ export const SplashWrapper = styled.div`
   min-height: 100vh;
   overflow-x: hidden;
   padding: ${toRem(16)};
-  width: 100vw;
+  max-width: 100vw;
   @media screen and (min-width: ${toRem(375)}) {
     padding: ${toRem(28)};
   }
