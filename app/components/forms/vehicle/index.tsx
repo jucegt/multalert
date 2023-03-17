@@ -1,6 +1,10 @@
 import { useNavigate } from '@remix-run/react';
 import { useState } from 'react';
 
+import Button from '~/components/button';
+import ButtonGroup from '~/components/button-group';
+import IconVehicle from '~/components/svgs/vehicle';
+import VehicleConfig from '~/components/vehicle-config';
 import VehicleInfo from '~/components/vehicle-info';
 
 import { IVehicle } from '~/interfaces/IVehicle';
@@ -41,6 +45,13 @@ const VehicleForm = () => {
     <VehicleFormWrapper method="post" onSubmit={handleSubmit}>
       {JSON.stringify(duplicated)}
       <VehicleInfo />
+      <VehicleConfig />
+      <ButtonGroup>
+        <Button variant="cancel" icon={<IconVehicle />} type="reset">
+          Cancelar
+        </Button>
+        <Button icon={<IconVehicle />}>Guardar Vehículo</Button>
+      </ButtonGroup>
     </VehicleFormWrapper>
   );
 };

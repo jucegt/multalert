@@ -7,7 +7,7 @@ export const TitleWrapper = styled.h2`
   display: flex;
   font-size: ${toRem(18)};
   gap: ${toRem(10)};
-  margin: 0 0 ${toRem(30)};
+  margin: ${toRem(20)} 0 ${toRem(30)};
   text-align: center;
   font-size: ${toRem(20)};
   line-height: ${toRem(24)};
@@ -19,6 +19,9 @@ export const TitleWrapper = styled.h2`
     flex-shrink: 1;
     height: ${toRem(1)};
     background: var(--decoration-color);
+  }
+  &:first-child {
+    margin-top: 0;
   }
   svg {
     color: var(--decoration-color);
