@@ -9,15 +9,17 @@ export const bgVariants = (variant: TVariants) => {
 };
 
 export const ButtonStyles = css`
-  box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
-  border-radius: ${toRem(8)};
-  color: var(--white);
-  border: none;
-  font-weight: 700;
-  padding: ${toRem(16)} ${toRem(18)};
-  display: inline-flex;
   align-items: center;
+  border-radius: ${toRem(8)};
+  border: none;
+  box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
   gap: ${toRem(10)};
+  padding: ${toRem(16)} ${toRem(18)};
+  user-select: none;
   svg {
     flex: 0 0 ${toRem(24)};
     max-width: ${toRem(24)};
