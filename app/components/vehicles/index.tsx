@@ -1,6 +1,7 @@
 import { Link } from '@remix-run/react';
 import React from 'react';
 import { IVehicle } from '~/interfaces/IVehicle';
+import { sLow } from '~/utils/plate-format';
 import Plate from '../plate';
 import { VehiclesListWrapper } from './style';
 
@@ -10,19 +11,15 @@ const VehiclesList = ({ vehicles }: { vehicles: IVehicle[] }) => {
       {vehicles.map((vehicle, index) => (
         <React.Fragment key={index}>
           <Link
-            to={`/vehiculos/${vehicle['plate-type']
-              .toString()
-              .toLowerCase()}-${vehicle['plate-number']
-              .toString()
-              .toLowerCase()}`}
+            to={`/vehiculos/${sLow(vehicle.pType)}-${sLow(vehicle.pNumber)}`}
           >
-            {vehicle['vehicle-name'].toString()}
+            {vehicle.vName?.toString()}
           </Link>
           <Plate
             key={index}
             notForm
-            type={vehicle['plate-type'].toString()}
-            number={vehicle['plate-number'].toString()}
+            type={vehicle.pType?.toString()}
+            number={vehicle.pNumber?.toString()}
           />
         </React.Fragment>
       ))}
