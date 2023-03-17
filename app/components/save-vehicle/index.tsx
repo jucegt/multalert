@@ -1,13 +1,16 @@
 import { useNavigate } from '@remix-run/react';
 import { useState } from 'react';
-import useLocalStorage from '~/hooks/use-local-storage';
+
 import { IVehicle } from '~/interfaces/IVehicle';
-import Button from '../button';
-import ButtonGroup from '../button-group';
-import Input from '../form-element/input';
-import Label from '../form-element/label';
-import Plate from '../plate';
-import IconVehicle from '../svgs/vehicle';
+import Button from '~/components/button';
+import ButtonGroup from '~/components/button-group';
+import IconVehicle from '~/components/svgs/vehicle';
+import Input from '~/components/form-element/input';
+import Label from '~/components/form-element/label';
+import Plate from '~/components/plate';
+
+import useLocalStorage from '~/hooks/use-local-storage';
+
 import { SaveVehicleForm } from './style';
 
 const SaveVehicle = () => {
