@@ -17,19 +17,15 @@ const Plate = ({ notForm, type, number, noti }: IPlate) => {
         <PlateValue>
           <PlateNumber
             as={notForm ? 'span' : 'input'}
-            name="plate-number"
-            id="plate-number"
+            name="pNumber"
+            id="pNumber"
             type="text"
             placeholder="987MAT"
             maxLength={6}
           >
             {notForm ? number : null}
           </PlateNumber>
-          <PlateType
-            as={notForm ? 'span' : 'select'}
-            name="plate-type"
-            id="plate-type"
-          >
+          <PlateType as={notForm ? 'span' : 'select'} name="pType" id="pType">
             {notForm
               ? type
               : types.map((plate) => (
