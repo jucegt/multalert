@@ -3,14 +3,14 @@ import colors from '~/configs/colors';
 import toRem from '~/utils/to-rem';
 
 export const InputWrapper = styled.input`
-  background: #181b23;
+  background: var(--bg-box-light);
   border-radius: ${toRem(6)};
   border: 0;
   color: var(--text-color);
   font-size: ${toRem(16)};
   height: ${toRem(46)};
   line-height: ${toRem(20)};
-  margin: ${toRem(6)} 0 ${toRem(20)};
+  margin: 0 0 ${toRem(20)};
   outline-offset: ${toRem(4)};
   outline: ${toRem(2)} solid transparent;
   padding: 0 ${toRem(16)};
@@ -32,7 +32,8 @@ export const InputWrapper = styled.input`
     color: var(--text-color);
     opacity: 0.2;
   }
-  &:focus {
+  &:focus,
+  &:active {
     outline: ${toRem(2)} solid var(---decoration-color, ${colors.blue});
     outline-offset: ${toRem(2)};
   }

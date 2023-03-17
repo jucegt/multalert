@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
-export const LabelWrapper = styled.label`
+export const LabelWrapper = styled.label<{ hasComponent: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: ${toRem(6)} 0;
+  margin: 0 0 ${(props) => (props.hasComponent ? toRem(20) : toRem(6))};
+  user-select: none;
 `;
 
 export const LabelText = styled.span`

@@ -14,7 +14,7 @@ const Label = ({
   ...rest
 }: ILabel) => {
   return (
-    <LabelWrapper {...rest}>
+    <LabelWrapper {...rest} hasComponent={component ? true : false}>
       <LabelText>
         {children} {required ? <LabelRequired>*</LabelRequired> : null}
       </LabelText>
