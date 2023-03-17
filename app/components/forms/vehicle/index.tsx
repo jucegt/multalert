@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import Button from '~/components/button';
 import ButtonGroup from '~/components/button-group';
+import IconCross from '~/components/svgs/cross';
 import IconVehicle from '~/components/svgs/vehicle';
 import VehicleConfig from '~/components/vehicle-config';
 import VehicleInfo from '~/components/vehicle-info';
@@ -11,34 +12,39 @@ import { IVehicle } from '~/interfaces/IVehicle';
 
 import useLocalStorage from '~/hooks/use-local-storage';
 
+import { sUp, sLow, vFormat } from '~/utils/plate-format';
+
 import { VehicleFormWrapper } from './style';
 
 const VehicleForm = () => {
   const navigate = useNavigate();
   const [duplicated, setDuplicated] = useState<IVehicle>({});
   const [vehicles, setVehicles] = useLocalStorage<IVehicle[]>('vehicles', []);
-  const handleSubmit = (e: any) => {
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setDuplicated({});
 
-    const data = new FormData(e.target);
+    const target = e.target as HTMLFormElement;
+    const data = new FormData(target);
+
+    const vName = data.get('vName');
+    const pType = data.get('pType');
+    const pNumber = data.get('pNumber');
+    if (!vName || !pType || !pNumber) {
+      return;
+    }
+
     const vehicle = Object.fromEntries(data);
-    const vehicleExist = vehicles.filter(
-      (v) =>
-        v.pType === vehicle.pType &&
-        v.pNumber.toString().toLowerCase() ===
-          vehicle.pNumber.toString().toLowerCase()
+    const lsVehicle = vehicles.filter(
+      (v) => v.pType === sUp(pType) && v.pNumber === sUp(pNumber)
     );
 
-    if (vehicleExist.length) {
-      setDuplicated(vehicleExist[0]);
+    if (lsVehicle.length) {
+      setDuplicated(lsVehicle[0]);
     } else {
-      setVehicles([vehicle, ...vehicles]);
-      navigate(
-        `/vehiculos/${vehicle.pType.toString().toLowerCase()}-${vehicle.pNumber
-          .toString()
-          .toLowerCase()}`
-      );
+      setVehicles([vFormat(vehicle), ...vehicles]);
+      navigate(`/vehiculos/${sLow(pType)}-${sLow(pNumber)}`);
     }
   };
   return (
@@ -46,7 +52,7 @@ const VehicleForm = () => {
       <VehicleInfo />
       <VehicleConfig />
       <ButtonGroup>
-        <Button variant="cancel" icon={<IconVehicle />} type="reset">
+        <Button variant="cancel" icon={<IconCross />} type="reset">
           Cancelar
         </Button>
         <Button icon={<IconVehicle />}>Guardar Vehículo</Button>
