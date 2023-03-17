@@ -1,14 +1,15 @@
-import Plate from '../plate';
-import { PlatesSplashWrapper } from './style';
+import Plate from '~/components/plate';
 
-const PlatesSplash = () => {
+import { PlateGroupWrapper } from './style';
+
+const PlateGroup = () => {
   return (
-    <PlatesSplashWrapper>
+    <PlateGroupWrapper>
       <Plate notForm type="C" number="960PAS" noti={2} />
       <Plate notForm type="M" number="654GHJ" noti={1} />
       <Plate notForm type="P" number="832RYM" noti={3} />
-    </PlatesSplashWrapper>
+    </PlateGroupWrapper>
   );
 };
 
-export default PlatesSplash;
+export default PlateGroup;
