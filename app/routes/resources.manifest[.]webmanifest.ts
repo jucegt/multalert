@@ -12,12 +12,36 @@ export let loader: LoaderFunction = () => {
       display: 'standalone',
       lang: 'es-GT',
       orientation: 'portrait',
-      background_color: '#305876',
-      theme_color: '#305876',
+      background_color: '#d0daff',
+      theme_color: '#d0daff',
       shortcuts: [
         {
-          name: 'Inicio',
-          url: '/',
+          name: 'Mis Vehículos',
+          url: '/vehiculos',
+          icons: [
+            {
+              src: '/icons/android-icon-96x96.png',
+              sizes: '96x96',
+              type: 'image/png',
+              purpose: 'any monochrome',
+            },
+          ],
+        },
+        {
+          name: 'Agregar Vehículo',
+          url: '/vehiculos/agregar',
+          icons: [
+            {
+              src: '/icons/android-icon-96x96.png',
+              sizes: '96x96',
+              type: 'image/png',
+              purpose: 'any monochrome',
+            },
+          ],
+        },
+        {
+          name: 'Ajustes',
+          url: '/ajustes',
           icons: [
             {
               src: '/icons/android-icon-96x96.png',
