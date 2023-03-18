@@ -1,14 +1,10 @@
-import { IVehicle } from '~/interfaces/IVehicle';
+import { IVehicle, TFormTypes } from '~/interfaces/IVehicle';
 
-export const sUp = (
-  string: string | FormDataEntryValue | null | undefined | number | boolean
-) => {
+export const sUp = (string: TFormTypes) => {
   return string?.toString().toUpperCase();
 };
 
-export const sLow = (
-  string: string | FormDataEntryValue | null | undefined | number | boolean
-) => {
+export const sLow = (string: TFormTypes) => {
   return string?.toString().toLowerCase();
 };
 

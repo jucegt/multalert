@@ -1,11 +1,12 @@
+import { useState } from 'react';
+
 import { frequency } from '~/data/notification-frequency.json';
 
-import Label from '~/components/form-element/label';
-import Switch from '~/components/form-element/switch';
-import Select from '~/components/form-element/select';
 import IconSettings from '~/components/svgs/settings';
+import Label from '~/components/form-element/label';
+import Select from '~/components/form-element/select';
+import Switch from '~/components/form-element/switch';
 import Title from '~/components/title';
-import { useState } from 'react';
 
 const VehicleConfig = () => {
   const [disabled, setDisabled] = useState(false);
