@@ -5,8 +5,8 @@ import manifest from '~/configs/manifest';
 export let loader: LoaderFunction = () => {
   return json(
     {
-      background_color: '#d0daff',
-      theme_color: '#d0daff',
+      background_color: '#0e0f13',
+      theme_color: '#0e0f13',
       ...manifest,
     },
     {
