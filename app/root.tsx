@@ -84,6 +84,16 @@ export default function App() {
     <html lang="es" className={theme || maTheme}>
       <head>
         <Meta />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#d0daff"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#d0daff"
+        />
         <Links />
         <Icons />
         {typeof document === 'undefined' ? '__STYLES__' : null}
