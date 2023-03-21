@@ -3,13 +3,14 @@ import { parse } from 'node-html-parser';
 import emetraToJson from '~/utils/emetra-to-json';
 import { sUp } from '~/utils/plate-format';
 
-const EMETRA = 'http://consulta.muniguate.com/emetra/despliega.php';
+const EMETRA = process.env.EMETRA_URL;
 
 export const getEmetraInfo = async (type: string, number: string) => {
+  const url = new URL(EMETRA || '');
   const plate = new FormData();
   plate.append('tplaca', type);
   plate.append('nplaca', number);
-  const emetraRequest = await fetch(EMETRA, {
+  const emetraRequest = await fetch(url, {
     method: 'POST',
     body: plate,
   });
