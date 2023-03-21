@@ -8,9 +8,10 @@ export const FineCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${toRem(10)};
-  margin: ${toRem(20)} 0;
   max-width: ${toRem(255)};
   counter-increment: fine;
+  flex: 0 0 100%;
+  min-width: 0;
   &:before {
     content: counter(fine);
     position: absolute;

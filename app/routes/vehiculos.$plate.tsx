@@ -16,6 +16,7 @@ import { getEmetraInfo } from '~/services/emetra';
 import { sUp } from '~/utils/plate-format';
 import Info from '~/components/info';
 import FineCard from '~/components/fine-card';
+import Carousel from '~/components/carousel';
 
 export const loader = async ({ params }: LoaderArgs) => {
   const plateSplit = params.plate?.split('-');
@@ -55,11 +56,13 @@ export default function VehiclePlate() {
       <Plate notForm type={data?.type} number={data?.number} />
       <Message message={data?.message} total={data?.total} />
       {data?.info ? <Info>{data.info}</Info> : null}
-      {data?.fines
-        ? data.fines.map(({ fecha, lugar, costo }) => (
+      {data?.fines ? (
+        <Carousel>
+          {data.fines.map(({ fecha, lugar, costo }) => (
             <FineCard key={fecha} date={fecha} location={lugar} cost={costo} />
-          ))
-        : null}
+          ))}
+        </Carousel>
+      ) : null}
     </>
   );
 }
