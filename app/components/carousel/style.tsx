@@ -12,7 +12,4 @@ export const CarouselWrapper = styled.div``;
 export const CarouselContainer = styled.div`
   display: flex;
   gap: ${toRem(20)};
-  & > *:last-child {
-    margin-right: ${toRem(20)};
-  }
 `;

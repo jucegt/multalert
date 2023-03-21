@@ -4,7 +4,7 @@ import { IChildren } from '~/interfaces/IChildren';
 import { CarouselWrapper, CarouselContainer, CarouselOverflow } from './style';
 
 const Carousel = ({ children }: IChildren) => {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef] = useEmblaCarousel({ containScroll: 'trimSnaps' });
 
   return (
     <CarouselOverflow>
