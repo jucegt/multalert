@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
 export const PlateWrapper = styled.div`
+  display: block;
   aspect-ratio: 488/248;
   background: #fff;
   border-radius: ${toRem(12)};
@@ -65,6 +66,7 @@ export const PlateContent = styled.div`
   }
   &:after {
     content: 'Centro América';
+    color: #222;
   }
 
   @media screen and (max-width: ${toRem(319)}) {

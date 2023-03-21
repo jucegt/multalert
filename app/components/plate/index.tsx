@@ -10,23 +10,27 @@ import {
 } from './style';
 import { IPlate } from './types';
 
-const Plate = ({ notForm, type, number, noti }: IPlate) => {
+const Plate = ({ notForm, asLink, type, number, noti }: IPlate) => {
   return (
-    <PlateWrapper>
-      <PlateContent>
-        <PlateValue>
+    <PlateWrapper as={asLink ? 'span' : 'div'}>
+      <PlateContent as={asLink ? 'span' : 'div'}>
+        <PlateValue as={asLink ? 'span' : 'div'}>
           <PlateNumber
-            as={notForm ? 'span' : 'input'}
-            name="pNumber"
-            id="pNumber"
-            type="text"
-            placeholder="987MAT"
-            maxLength={6}
+            as={notForm || asLink ? 'span' : 'input'}
+            name={notForm || asLink ? undefined : 'pNumber'}
+            id={notForm || asLink ? undefined : 'pNumber'}
+            type={notForm || asLink ? undefined : 'text'}
+            placeholder={notForm || asLink ? undefined : '987MAT'}
+            maxLength={notForm || asLink ? undefined : 6}
           >
-            {notForm ? number : null}
+            {notForm || asLink ? number : null}
           </PlateNumber>
-          <PlateType as={notForm ? 'span' : 'select'} name="pType" id="pType">
-            {notForm
+          <PlateType
+            as={notForm || asLink ? 'span' : 'select'}
+            name={notForm || asLink ? undefined : 'pType'}
+            id={notForm || asLink ? undefined : 'pType'}
+          >
+            {notForm || asLink
               ? type
               : types.map((plate) => (
                   <option key={plate} value={plate}>
