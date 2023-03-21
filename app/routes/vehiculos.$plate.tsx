@@ -1,14 +1,21 @@
 import { LoaderArgs } from '@remix-run/node';
-import { useLoaderData, useParams } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import { useEffect, useState } from 'react';
+
 import Plate from '~/components/plate';
 import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
-import VehicleMessage from '~/components/message';
+import Message from '~/components/message';
+
 import useLocalStorage from '~/hooks/use-local-storage';
+
 import { IVehicle } from '~/interfaces/IVehicle';
+
 import { getEmetraInfo } from '~/services/emetra';
+
 import { sUp } from '~/utils/plate-format';
+import Info from '~/components/info';
+import FineCard from '~/components/fine-card';
 
 export const loader = async ({ params }: LoaderArgs) => {
   const plateSplit = params.plate?.split('-');
@@ -46,19 +53,13 @@ export default function VehiclePlate() {
     <>
       <Title icon={<IconVehicle />}>{vehicle?.vName.toString()}</Title>
       <Plate notForm type={data?.type} number={data?.number} />
-      <VehicleMessage message={data?.message} total={data?.total} />
-      <div style={{ color: '#fff' }}>
-        {data?.info ? <p>{data.info}</p> : null}
-        {data?.fines
-          ? data.fines.map(({ fecha, lugar, costo }, index) => (
-              <div key={index}>
-                <p>Fecha y Hora: {fecha}</p>
-                <p>Lugar: {lugar}</p>
-                <p>Costo: {costo}</p>
-              </div>
-            ))
-          : null}
-      </div>
+      <Message message={data?.message} total={data?.total} />
+      {data?.info ? <Info>{data.info}</Info> : null}
+      {data?.fines
+        ? data.fines.map(({ fecha, lugar, costo }) => (
+            <FineCard key={fecha} date={fecha} location={lugar} cost={costo} />
+          ))
+        : null}
     </>
   );
 }
