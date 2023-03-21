@@ -1,5 +1,7 @@
 import { parse } from 'node-html-parser';
+
 import emetraToJson from '~/utils/emetra-to-json';
+import { sUp } from '~/utils/plate-format';
 
 const EMETRA = 'http://consulta.muniguate.com/emetra/despliega.php';
 
@@ -29,6 +31,8 @@ export const getEmetraInfo = async (type: string, number: string) => {
   const fines = finesTable ? emetraToJson(finesTable) : [];
 
   return {
+    type: sUp(type),
+    number: sUp(number),
     info,
     message:
       fines.length > 0
