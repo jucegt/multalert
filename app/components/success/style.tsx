@@ -15,4 +15,13 @@ export const SuccessText = styled.p`
   font-weight: 700;
   margin: 0;
   text-shadow: 0 ${toRem(2)} ${toRem(2)} rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: ${toRem(10)};
+
+  svg {
+    flex: 0 0 ${toRem(24)};
+    max-width: ${toRem(24)};
+    height: ${toRem(24)};
+  }
 `;
