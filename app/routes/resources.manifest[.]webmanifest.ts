@@ -12,7 +12,8 @@ export let loader: LoaderFunction = () => {
       display: 'standalone',
       lang: 'es-GT',
       orientation: 'portrait',
-      background_color: '#d0daff',
+      background_color: '#2575fc',
+      theme_color: '#2575fc',
       shortcuts: [
         {
           name: 'Mis Vehículos',
