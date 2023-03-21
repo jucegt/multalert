@@ -2,13 +2,13 @@ import { LoaderArgs } from '@remix-run/node';
 import { useLoaderData, useParams } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import Plate from '~/components/plate';
-import Success from '~/components/success';
 import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
-import Warning from '~/components/warning';
+import VehicleMessage from '~/components/vehicle-message';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
 import { getEmetraInfo } from '~/services/emetra';
+import { sUp } from '~/utils/plate-format';
 
 export const loader = async ({ params }: LoaderArgs) => {
   const plateSplit = params.plate?.split('-');
@@ -24,22 +24,17 @@ export const loader = async ({ params }: LoaderArgs) => {
 
 export default function VehiclePlate() {
   const data = useLoaderData<typeof loader>();
+  const plate = `${data?.type}-${data?.number}`;
   const [vehicles] = useLocalStorage<IVehicle[]>('vehicles', []);
-  const { plate } = useParams();
-  const [, setNotificacion] = useLocalStorage<number>(`${plate}`, 0);
+  const [, setNotificacion] = useLocalStorage<number>(plate, 0);
   const [vehicle, setVehicle] = useState<IVehicle>();
-  const plateSplit = plate?.split('-');
-  const plateType = plateSplit?.[0].toUpperCase();
-  const plateNumber = plateSplit?.[1].toUpperCase();
 
   useEffect(() => {
     if (vehicles) {
-      const vehicleInfo = vehicles.find(
-        (vehicle) =>
-          vehicle['plate-type'] === plateType &&
-          vehicle['plate-number'].toString().toUpperCase() === plateNumber
+      const vFound = vehicles.find(
+        (v) => v.pType === data?.type && sUp(v.pNumber) === data?.number
       );
-      if (vehicleInfo) setVehicle(vehicleInfo);
+      if (vFound) setVehicle(vFound);
     }
   }, [vehicles]);
 
@@ -49,17 +44,9 @@ export default function VehiclePlate() {
 
   return (
     <>
-      <Title icon={<IconVehicle />}>
-        {vehicle?.['vehicle-name'].toString()}
-      </Title>
-      <Plate notForm type={plateType} number={plateNumber} />
-      {data?.message ? (
-        data.total ? (
-          <Warning>{data.message}</Warning>
-        ) : (
-          <Success>{data.message}</Success>
-        )
-      ) : null}
+      <Title icon={<IconVehicle />}>{vehicle?.vName.toString()}</Title>
+      <Plate notForm type={data?.type} number={data?.number} />
+      <VehicleMessage message={data?.message} total={data?.total} />
       <div style={{ color: '#fff' }}>
         {data?.info ? <p>{data.info}</p> : null}
         {data?.fines
