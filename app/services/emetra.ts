@@ -25,6 +25,8 @@ export const getEmetraInfo = async (type: string, number: string) => {
     .replace(/\s+/g, ' ')
     .replace(/No Disponible/gm, '')
     .replace(plateString, '')
+    .toLowerCase()
+    .replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase())
     .trim();
 
   const finesTable = html.getElementById('transito');
