@@ -14,13 +14,13 @@ const VehiclesList = ({ vehicles }: { vehicles: IVehicle[] }) => {
             to={`/vehiculos/${sLow(vehicle.pType)}-${sLow(vehicle.pNumber)}`}
           >
             {vehicle.vName?.toString()}
+            <Plate
+              key={index}
+              asLink
+              type={vehicle.pType?.toString()}
+              number={vehicle.pNumber?.toString()}
+            />
           </Link>
-          <Plate
-            key={index}
-            notForm
-            type={vehicle.pType?.toString()}
-            number={vehicle.pNumber?.toString()}
-          />
         </React.Fragment>
       ))}
     </VehiclesListWrapper>
