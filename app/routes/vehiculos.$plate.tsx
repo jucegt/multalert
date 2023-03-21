@@ -56,7 +56,7 @@ export default function VehiclePlate() {
       <Plate notForm type={data?.type} number={data?.number} />
       <Message message={data?.message} total={data?.total} />
       {data?.info ? <Info>{data.info}</Info> : null}
-      {data?.fines ? (
+      {data?.fines.length ? (
         <Carousel>
           {data.fines.map(({ fecha, lugar, costo }) => (
             <FineCard key={fecha} date={fecha} location={lugar} cost={costo} />
