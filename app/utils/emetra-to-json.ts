@@ -32,7 +32,9 @@ const finesToJson = (table: HTMLElement) => {
   var fine = fineList.map((multa) =>
     multa.reduce((finesObject: { [key: string]: string }, value, index) => {
       if (index === 0) {
-        finesObject[finesHeader[index]] = value.replace(/-/g, '/');
+        finesObject[finesHeader[index]] = value
+          .replace(/-/g, '/')
+          .replace(' ', ' - ');
       } else if (index === 1) {
         finesObject[finesHeader[index]] = value.replace(/_/g, ' ');
       } else {
