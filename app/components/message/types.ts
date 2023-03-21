@@ -1,4 +1,4 @@
-export interface IVehicleMessage {
+export interface IMessage {
   message?: string;
   total?: number;
 }

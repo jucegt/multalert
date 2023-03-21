@@ -1,9 +1,9 @@
 import Success from '~/components/success';
 import Warning from '~/components/warning';
 
-import { IVehicleMessage } from './types';
+import { IMessage } from './types';
 
-const VehicleMessage = ({ message, total }: IVehicleMessage) => {
+const Message = ({ message, total }: IMessage) => {
   return (
     <>
       {message ? (
@@ -17,4 +17,4 @@ const VehicleMessage = ({ message, total }: IVehicleMessage) => {
   );
 };
 
-export default VehicleMessage;
+export default Message;

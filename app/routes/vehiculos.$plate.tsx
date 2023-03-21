@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Plate from '~/components/plate';
 import IconVehicle from '~/components/svgs/vehicle';
 import Title from '~/components/title';
-import VehicleMessage from '~/components/vehicle-message';
+import VehicleMessage from '~/components/message';
 import useLocalStorage from '~/hooks/use-local-storage';
 import { IVehicle } from '~/interfaces/IVehicle';
 import { getEmetraInfo } from '~/services/emetra';
