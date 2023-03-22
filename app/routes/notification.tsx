@@ -1,3 +1,8 @@
+import Button from '~/components/button';
+import ButtonGroup from '~/components/button-group';
+import IconWarning from '~/components/svgs/warning';
+import Title from '~/components/title';
+import Warning from '~/components/warning';
 import DefaultLayout from '~/layouts/default';
 
 import { SendNotification } from '~/utils/pwa/client/pwa-utils.client';
@@ -11,39 +16,16 @@ const options = {
 export default function Settings() {
   return (
     <DefaultLayout>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <button onClick={() => SendNotification('multalert', options)}>
-        Notificacion
-      </button>
+      <Title>
+        <IconWarning />
+        Notificaciones
+      </Title>
+      <Warning>Esta sección es solo para pruebas</Warning>
+      <ButtonGroup>
+        <Button onClick={() => SendNotification('multalert', options)}>
+          Prueba de Notificacion
+        </Button>
+      </ButtonGroup>
     </DefaultLayout>
   );
 }
