@@ -7,9 +7,8 @@ const GlobalStyles = createGlobalStyle`
 		min-width: 320px;
 		font-size: 16px;
     font-family: 'Barlow';
-    --primary-gradient: ${colors.defaultGradient};
-    --bg-box-light: ${colors.lightBoxLight};
     --bg-box-light-blur: ${colors.lightBoxLightBlur};
+    --bg-box-light: ${colors.lightBoxLight};
     --bg-box: ${colors.lightBox};
     --bg-button-cancel: ${colors.cancelGradientLight};
     --bg-button-secondary: ${colors.red};
@@ -17,9 +16,11 @@ const GlobalStyles = createGlobalStyle`
     --bg-color: ${colors.lightBlue};
     --bg-success: ${colors.green};
     --bg-warning: ${colors.yellow};
+    --cancel-color: ${colors.gray};
     --decoration-color: ${colors.blue};
     --delete-color: ${colors.red};
     --notification-bg: ${colors.red};
+    --primary-gradient: ${colors.defaultGradient};
     --text-color: ${colors.gray};
     --text-highlighted: ${colors.red};
     --text-shadow: none;
@@ -28,11 +29,12 @@ const GlobalStyles = createGlobalStyle`
 	}
   .dark {
     :root {
-      --bg-box-light: ${colors.darkBoxLight};
       --bg-box-light-blur: ${colors.darkBoxLightBlur};
+      --bg-box-light: ${colors.darkBoxLight};
       --bg-box: ${colors.darkBox};
       --bg-button-cancel: ${colors.cancelGradientDark};
       --bg-color: ${colors.darkBlue};
+      --cancel-color: ${colors.white};
       --text-color: ${colors.white};
       --text-shadow: 0 ${toRem(2)} ${toRem(2)} rgba(0, 0, 0, 0.4);
     }

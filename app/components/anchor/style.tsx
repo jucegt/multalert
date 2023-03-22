@@ -11,6 +11,8 @@ export const AnchorWrapper = styled.div<IButtonWrapper>`
   a {
     text-decoration: none;
     background: ${(props) => bgVariants(props.variant)};
+    color: ${(props) =>
+      props.variant === 'cancel' ? 'var(--cancel-color)' : 'var(--white)'};
     ${ButtonStyles}
   }
 `;

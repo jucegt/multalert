@@ -13,7 +13,6 @@ export const ButtonStyles = css`
   border-radius: ${toRem(8)};
   border: none;
   box-shadow: 0 ${toRem(20)} ${toRem(20)} ${toRem(-10)} rgba(0, 0, 0, 0.2);
-  color: var(--white);
   cursor: pointer;
   display: inline-flex;
   font-weight: 700;
@@ -28,6 +27,8 @@ export const ButtonStyles = css`
 `;
 
 export const ButtonWrapper = styled.button<IButtonWrapper>`
+  color: ${(props) =>
+    props.variant === 'cancel' ? 'var(--cancel-color)' : 'var(--white)'};
   background: ${(props) => bgVariants(props.variant)};
   ${ButtonStyles}
 `;
