@@ -42,7 +42,9 @@ export default function VehiclePlate() {
   useEffect(() => {
     if (vehicles) {
       const vFound = vehicles.find(
-        (v) => v.pType === data?.type && sUp(v.pNumber) === data?.number
+        (v) =>
+          sUp(v.pType) === sUp(data?.type) &&
+          sUp(v.pNumber) === sUp(data?.number)
       );
       if (vFound) setVehicle(vFound);
     }
