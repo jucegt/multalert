@@ -1,7 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { useLocation, useMatches } from '@remix-run/react';
-import type { MetaFunction, LinksFunction } from '@remix-run/node';
+import { LoaderFunction } from '@remix-run/node';
+import { useLoaderData, useLocation, useMatches } from '@remix-run/react';
 import {
   Links,
   LiveReload,
@@ -10,34 +10,33 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+
 import GlobalStyles from '~/components/global';
 import Icons from './components/icons';
+import useCookie from './hooks/use-cookie';
 
+export { links } from '~/configs/links';
+export { meta } from '~/configs/meta-data';
 let isMount = true;
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title:
-    'multalert - Recibe notificaciones cuando te coloquen una multa de tránsito en Emetra',
-  viewport: 'width=device-width,initial-scale=1',
-});
-
-export const links: LinksFunction = () => [
-  {
-    rel: 'manifest',
-    href: '/resources/manifest.webmanifest',
-  },
-  {
-    rel: 'stylesheet',
-    href: '/styles/fonts.css',
-  },
-];
+export const loader: LoaderFunction = async ({ request }) => {
+  const cookies = request.headers.get('Cookie');
+  const cookieList = cookies?.split(';');
+  const cookieTheme = cookieList?.find((cookie) =>
+    cookie.includes('_ma-theme=')
+  );
+  const themeSlpit = cookieTheme?.split('=');
+  const theme = themeSlpit?.[themeSlpit?.length - 1];
+  return { theme };
+};
 
 export default function App() {
-  let location = useLocation();
-  let matches = useMatches();
+  const location = useLocation();
+  const matches = useMatches();
+  const { theme } = useLoaderData<typeof loader>();
+  const [maTheme, setTheme] = useCookie('_ma-theme', 'light');
 
-  React.useEffect(() => {
+  useEffect(() => {
     let mounted = isMount;
     isMount = false;
     if ('serviceWorker' in navigator) {
@@ -71,10 +70,30 @@ export default function App() {
     }
   }, [location]);
 
+  useEffect(() => {
+    const isDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    const themeMode = isDarkMode ? 'dark' : 'light';
+    if (theme !== themeMode) {
+      setTheme(themeMode, 365);
+    }
+  }, []);
+
   return (
-    <html lang="es">
+    <html lang="es" className={theme || maTheme}>
       <head>
         <Meta />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#d0daff"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#0e0f13"
+        />
         <Links />
         <Icons />
         {typeof document === 'undefined' ? '__STYLES__' : null}

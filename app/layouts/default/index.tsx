@@ -1,27 +1,15 @@
-import { Link } from 'react-router-dom';
-import Logo from '~/components/logo';
+import Header from '~/components/header';
+import Nav from '~/components/nav';
 import { IChildren } from '~/interfaces/IChildren';
-import {
-  DefaultLayoutContainer,
-  DefaultLayoutFooter,
-  DefaultLayoutHeader,
-  DefaultLayoutWrapper,
-} from './style';
+
+import { DefaultLayoutContainer, DefaultLayoutWrapper } from './style';
 
 const DefaultLayout = ({ children }: IChildren) => {
   return (
     <DefaultLayoutWrapper>
-      <DefaultLayoutHeader>
-        <DefaultLayoutContainer>
-          <Logo />
-        </DefaultLayoutContainer>
-      </DefaultLayoutHeader>
+      <Header />
       <DefaultLayoutContainer>{children}</DefaultLayoutContainer>
-      <DefaultLayoutFooter>
-        <Link to="/vehiculos">Vehiculos</Link>
-        <Link to="/vehiculos/agregar">Agregar</Link>
-        {/* <Link to="/ajustes">Ajustes</Link> */}
-      </DefaultLayoutFooter>
+      <Nav />
     </DefaultLayoutWrapper>
   );
 };

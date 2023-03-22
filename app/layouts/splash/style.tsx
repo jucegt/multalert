@@ -2,50 +2,35 @@ import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
 
 export const SplashWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  padding: ${toRem(16)};
-  background: rgb(43, 88, 118);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #2b5876 0%, #4e4376 100%);
-  p {
-    font-size: 36px;
-    font-family: 'Barlow';
-    color: #fff;
-    span {
-      color: #fa3e3e;
-    }
+  padding: ${toRem(16)};
+  max-width: 100vw;
+  @media screen and (min-width: ${toRem(375)}) {
+    padding: ${toRem(28)};
   }
-  button,
-  .button {
-    text-decoration: none;
-    color: #000;
-    display: inline-flex;
-    align-items: center;
-    border: none;
-    background: #fff;
-    border-radius: 100px;
-    height: 60px;
-    padding: 0 30px;
-    margin: 0 10px;
-    font-family: 'Barlow';
-    font-weight: 700;
-    font-size: 18px;
-  }
-  small {
-    margin-top: auto;
-    margin-bottom: 0;
-    display: block;
-    color: #fff;
-    opacity: 0.4;
-    font-family: 'Barlow';
+  @media screen and (min-width: ${toRem(400)}) {
+    padding: ${toRem(40)};
   }
 `;
 
 export const SplashContent = styled.div`
-  max-width: 500px;
+  width: 100%;
+  max-width: ${toRem(500)};
   margin: 0 auto;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+`;
+
+export const SplashInfo = styled.small`
+  display: block;
+  color: var(--text-color);
+  opacity: 0.4;
+  font-family: 'Barlow';
+  font-weight: 400;
+  font-size: ${toRem(12)};
+  line-height: ${toRem(14)};
+  max-width: ${toRem(500)};
+  margin: auto auto 0;
 `;

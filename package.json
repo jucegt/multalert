@@ -8,8 +8,7 @@
     "build:remix": "cross-env NODE_ENV=production remix build",
     "build:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --minify --bundle --format=esm --define:process.env.NODE_ENV='\"production\"'",
     "dev:remix": "cross-env NODE_ENV=development remix dev",
-    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch",
-    "postinstall": "remix-esbuild-override"
+    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch"
   },
   "dependencies": {
     "@remix-run/node": "^1.13.0",
@@ -19,6 +18,7 @@
     "@vercel/node": "^2.6.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
+    "embla-carousel-react": "^7.1.0",
     "node-html-parser": "^6.1.4",
     "node-persist": "^3.1.0",
     "npm-run-all": "^4.1.5",
@@ -36,10 +36,6 @@
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.27.0",
-    "remix-esbuild-override": "^3.0.4",
     "typescript": "^4.9.5"
-  },
-  "engines": {
-    "node": ">=14"
   }
 }
