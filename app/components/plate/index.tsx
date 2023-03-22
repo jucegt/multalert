@@ -22,6 +22,7 @@ const Plate = ({ notForm, asLink, type, number, noti }: IPlate) => {
             type={notForm || asLink ? undefined : 'text'}
             placeholder={notForm || asLink ? undefined : '987MAT'}
             maxLength={notForm || asLink ? undefined : 6}
+            autoComplete={notForm || asLink ? undefined : 'off'}
           >
             {notForm || asLink ? number : null}
           </PlateNumber>
