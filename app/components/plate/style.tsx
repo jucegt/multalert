@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import toRem from '~/utils/to-rem';
+import { SuccessWrapper } from '../success/style';
+import { WarningWrapper } from '../warning/style';
 
 export const PlateWrapper = styled.div`
   display: block;
@@ -31,6 +33,10 @@ export const PlateWrapper = styled.div`
     content: '';
     inset: ${toRem(10)};
     position: absolute;
+  }
+  & ~ ${SuccessWrapper}, & ~ ${WarningWrapper} {
+    margin-top: ${toRem(-20)};
+    padding-top: ${toRem(40)};
   }
   @media screen and (min-width: ${toRem(440)}) {
     width: ${toRem(400)};

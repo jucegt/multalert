@@ -3,9 +3,9 @@ import toRem from '~/utils/to-rem';
 
 export const SuccessWrapper = styled.div`
   background: var(--bg-success);
-  padding: ${toRem(40)} ${toRem(20)} ${toRem(20)};
+  padding: ${toRem(20)};
   border-radius: ${toRem(6)};
-  margin: ${toRem(-20)} auto ${toRem(20)};
+  margin: ${toRem(20)} auto;
   max-width: ${toRem(400)};
 `;
 
