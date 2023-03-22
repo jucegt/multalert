@@ -14,12 +14,14 @@ import useLocalStorage from '~/hooks/use-local-storage';
 
 import { sUp, sLow, vFormat } from '~/utils/plate-format';
 
+import { V_KEY } from '~/configs/constants';
+
 import { VehicleFormWrapper } from './style';
 
 const VehicleForm = () => {
   const navigate = useNavigate();
   const [duplicated, setDuplicated] = useState<IVehicle>({});
-  const [vehicles, setVehicles] = useLocalStorage<IVehicle[]>('vehicles', []);
+  const [vehicles, setVehicles] = useLocalStorage<IVehicle[]>(V_KEY, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,7 +45,8 @@ const VehicleForm = () => {
     if (lsVehicle.length) {
       setDuplicated(lsVehicle[0]);
     } else {
-      setVehicles([vFormat(vehicle), ...vehicles]);
+      const vehicleFormat = vFormat(vehicle) as IVehicle;
+      setVehicles([vehicleFormat, ...vehicles]);
       navigate(`/vehiculos/${sLow(pType)}-${sLow(pNumber)}`);
     }
   };
@@ -57,9 +60,6 @@ const VehicleForm = () => {
         </Button>
         <Button icon={<IconVehicle />}>Guardar Vehículo</Button>
       </ButtonGroup>
-      <div style={{ color: '#fff', margin: '30px 0' }}>
-        {JSON.stringify(duplicated)}
-      </div>
     </VehicleFormWrapper>
   );
 };

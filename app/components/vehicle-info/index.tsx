@@ -9,7 +9,7 @@ import Title from '~/components/title';
 import randomInt from '~/utils/random-int';
 
 const VehicleInfo = () => {
-  const funnyName = names[randomInt(names.length - 1)];
+  const funnyName = names[randomInt(names.length)];
   const placeholder = `Ej.: ${funnyName}`;
 
   return (

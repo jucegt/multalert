@@ -9,9 +9,11 @@ import useLocalStorage from '~/hooks/use-local-storage';
 
 import SplashLayout from '~/layouts/splash';
 
+import { V_KEY } from '~/configs/constants';
+
 export default function Index() {
   const navigate = useNavigate();
-  const [vehicles] = useLocalStorage('vehicles', []);
+  const [vehicles] = useLocalStorage(V_KEY, []);
 
   useEffect(() => {
     if (vehicles?.length) navigate('/vehiculos');
