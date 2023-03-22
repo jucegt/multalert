@@ -13,11 +13,11 @@ enum colors {
   darkBlue = '#0e0f13',
   darkBox = '#202531',
   darkBoxLight = '#181b23',
-  darkBoxLightBlur = 'rgba(24, 27, 35, 0.98)',
+  darkBoxLightBlur = 'rgba(24, 27, 35, 0.95)',
   lightBlue = '#d0daff',
   lightBox = '#fff',
   lightBoxLight = '#e7edff',
-  lightBoxLightBlur = 'rgba(231, 237, 255, 0.98)',
+  lightBoxLightBlur = 'rgba(231, 237, 255, 0.95)',
 }
 
 export default colors;

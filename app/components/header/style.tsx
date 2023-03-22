@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
   height: ${toRem(60)};
   justify-content: space-between;
   margin: ${toRem(20)} ${toRem(20)} ${toRem(30)};
-  max-width: ${toRem(500)};
+  max-width: ${toRem(400)};
   padding: ${toRem(10)};
   position: sticky;
   top: ${toRem(20)};
@@ -33,7 +33,7 @@ export const HeaderWrapper = styled.header`
       justify-content: center;
     }
   }
-  @media screen and (min-width: ${toRem(540)}) {
+  @media screen and (min-width: ${toRem(440)}) {
     margin: ${toRem(20)} auto ${toRem(30)};
     width: 100%;
   }
