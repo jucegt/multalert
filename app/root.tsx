@@ -92,7 +92,7 @@ export default function App() {
         <meta
           name="theme-color"
           media="(prefers-color-scheme: dark)"
-          content="#d0daff"
+          content="#0e0f13"
         />
         <Links />
         <Icons />
