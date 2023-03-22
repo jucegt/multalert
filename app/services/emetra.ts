@@ -1,7 +1,7 @@
 import { parse } from 'node-html-parser';
 
 import emetraToJson from '~/utils/emetra-to-json';
-import { sUp } from '~/utils/plate-format';
+import { sLow } from '~/utils/plate-format';
 
 const EMETRA = process.env.EMETRA_URL;
 
@@ -34,8 +34,8 @@ export const getEmetraInfo = async (type: string, number: string) => {
   const fines = finesTable ? emetraToJson(finesTable) : [];
 
   return {
-    type: sUp(type),
-    number: sUp(number),
+    type: sLow(type),
+    number: sLow(number),
     info,
     message:
       fines.length > 0
