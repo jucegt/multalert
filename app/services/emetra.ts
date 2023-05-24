@@ -19,8 +19,8 @@ export const getEmetraInfo = async (type: string, number: string) => {
   const plateString = `${type}-${number}`.toUpperCase();
 
   const html = parse(htmlString);
-  const tables = html.querySelectorAll('table');
-  const infoTable = tables[0].querySelector('tbody');
+  const tables = html?.querySelectorAll('table');
+  const infoTable = tables[0]?.querySelector('tbody');
   const info = infoTable?.innerText
     .replace(/(\r\n|\n|\r)/gm, ' ')
     .replace(/\s+/g, ' ')
@@ -30,10 +30,11 @@ export const getEmetraInfo = async (type: string, number: string) => {
     .replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase())
     .trim();
 
-  const finesTable = html.getElementById('transito');
+  const finesTable = html?.getElementById('transito');
   const fines = finesTable ? emetraToJson(finesTable) : [];
 
   return {
+    all: htmlString,
     type: sLow(type),
     number: sLow(number),
     info,
