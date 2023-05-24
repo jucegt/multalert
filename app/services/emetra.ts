@@ -16,6 +16,8 @@ export const getEmetraInfo = async (type: string, number: string) => {
   });
   const htmlString = await emetraRequest.text();
 
+  console.log(htmlString);
+
   const plateString = `${type}-${number}`.toUpperCase();
 
   const html = parse(htmlString);
