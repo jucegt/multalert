@@ -27,6 +27,7 @@ export default function Index() {
         <br /> multa de tránsito
         <br /> de <strong>EMETRA</strong>
       </BigTitle>
+      <HomeButtons />
     </SplashLayout>
   );
 }

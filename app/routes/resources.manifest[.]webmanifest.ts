@@ -14,44 +14,44 @@ export let loader: LoaderFunction = () => {
       orientation: 'portrait',
       background_color: '#2575fc',
       theme_color: '#2575fc',
-      shortcuts: [
-        {
-          name: 'Mis Vehículos',
-          url: '/vehiculos',
-          icons: [
-            {
-              src: '/icons/android-icon-96x96.png',
-              sizes: '96x96',
-              type: 'image/png',
-              purpose: 'any monochrome',
-            },
-          ],
-        },
-        {
-          name: 'Agregar Vehículo',
-          url: '/vehiculos/agregar',
-          icons: [
-            {
-              src: '/icons/android-icon-96x96.png',
-              sizes: '96x96',
-              type: 'image/png',
-              purpose: 'any monochrome',
-            },
-          ],
-        },
-        {
-          name: 'Ajustes',
-          url: '/ajustes',
-          icons: [
-            {
-              src: '/icons/android-icon-96x96.png',
-              sizes: '96x96',
-              type: 'image/png',
-              purpose: 'any monochrome',
-            },
-          ],
-        },
-      ],
+      // shortcuts: [
+      //   {
+      //     name: 'Mis Vehículos',
+      //     url: '/vehiculos',
+      //     icons: [
+      //       {
+      //         src: '/icons/android-icon-96x96.png',
+      //         sizes: '96x96',
+      //         type: 'image/png',
+      //         purpose: 'any monochrome',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: 'Agregar Vehículo',
+      //     url: '/vehiculos/agregar',
+      //     icons: [
+      //       {
+      //         src: '/icons/android-icon-96x96.png',
+      //         sizes: '96x96',
+      //         type: 'image/png',
+      //         purpose: 'any monochrome',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     name: 'Ajustes',
+      //     url: '/ajustes',
+      //     icons: [
+      //       {
+      //         src: '/icons/android-icon-96x96.png',
+      //         sizes: '96x96',
+      //         type: 'image/png',
+      //         purpose: 'any monochrome',
+      //       },
+      //     ],
+      //   },
+      // ],
       icons: [
         {
           src: '/icons/android-icon-36x36.png',
