@@ -54,6 +54,8 @@ export default function VehiclePlate() {
     if (data?.total) setNotificacion(data.total);
   }, [data]);
 
+  console.log(data?.all);
+
   return (
     <>
       <Title icon={<IconVehicle />}>{vehicle?.vName.toString()}</Title>

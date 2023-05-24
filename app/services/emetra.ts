@@ -34,6 +34,7 @@ export const getEmetraInfo = async (type: string, number: string) => {
   const fines = finesTable ? emetraToJson(finesTable) : [];
 
   return {
+    all: htmlString,
     type: sLow(type),
     number: sLow(number),
     info,
