@@ -4,5 +4,6 @@ export interface IVehicleCard {
   type: TFormTypes;
   number: TFormTypes;
   name: TFormTypes;
-  setList: React.Dispatch<React.SetStateAction<IVehicle[]>>;
+  total: number;
+  // setList: React.Dispatch<React.SetStateAction<IVehicle[]>>;
 }

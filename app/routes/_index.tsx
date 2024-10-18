@@ -1,5 +1,6 @@
 import BigTitle from '~/components/big-title';
 import PlateGroup from '~/components/plate-group';
+import HomeButtons from '~/components/start-buttons';
 
 import SplashLayout from '~/layouts/splash';
 
@@ -13,6 +14,7 @@ export default function Index() {
         <br /> multa de tránsito
         <br /> de <strong>EMETRA</strong>
       </BigTitle>
+      <HomeButtons />
     </SplashLayout>
   );
 }
