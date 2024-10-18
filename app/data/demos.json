@@ -1,0 +1,181 @@
+{
+  "demos": [
+    {
+      "type": "P",
+      "number": "123ABC",
+      "info": "Honda Rojo",
+      "message": "Tienes 2 multas pendientes",
+      "total": 2,
+      "fines": [
+        {
+          "fecha": "15/10/2024 09:30",
+          "lugar": "Calzada Roosevelt",
+          "costo": "Q. 350.25"
+        },
+        {
+          "fecha": "20/10/2024 14:45",
+          "lugar": "Av. Reforma",
+          "costo": "Q. 400.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "456DEF",
+      "info": "Toyota Blanco",
+      "message": "No tienes multas pendientes",
+      "total": 0,
+      "fines": []
+    },
+    {
+      "type": "P",
+      "number": "789GHI",
+      "info": "Ford Azul",
+      "message": "Tienes 1 multa pendiente",
+      "total": 1,
+      "fines": [
+        {
+          "fecha": "12/10/2024 11:15",
+          "lugar": "Calzada San Juan",
+          "costo": "Q. 250.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "321JKL",
+      "info": "Nissan Gris",
+      "message": "No tienes multas pendientes",
+      "total": 0,
+      "fines": []
+    },
+    {
+      "type": "P",
+      "number": "654MNO",
+      "info": "Chevrolet Plata",
+      "message": "Tienes 3 multas pendientes",
+      "total": 3,
+      "fines": [
+        {
+          "fecha": "01/10/2024 08:00",
+          "lugar": "Anillo Periférico",
+          "costo": "Q. 500.00"
+        },
+        {
+          "fecha": "05/10/2024 15:30",
+          "lugar": "Calzada Aguilar Batres",
+          "costo": "Q. 300.00"
+        },
+        {
+          "fecha": "10/10/2024 12:45",
+          "lugar": "Boulevard Liberación",
+          "costo": "Q. 450.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "987PQR",
+      "info": "Hyundai Verde",
+      "message": "Tienes 5 multas pendientes",
+      "total": 5,
+      "fines": [
+        {
+          "fecha": "02/10/2024 10:20",
+          "lugar": "Calzada Atanasio Tzul",
+          "costo": "Q. 220.00"
+        },
+        {
+          "fecha": "06/10/2024 16:10",
+          "lugar": "Calle Martí",
+          "costo": "Q. 370.00"
+        },
+        {
+          "fecha": "08/10/2024 14:00",
+          "lugar": "Carretera a El Salvador",
+          "costo": "Q. 480.00"
+        },
+        {
+          "fecha": "11/10/2024 09:30",
+          "lugar": "6a Avenida Zona 1",
+          "costo": "Q. 290.00"
+        },
+        {
+          "fecha": "14/10/2024 13:15",
+          "lugar": "Calzada Aguilar Batres",
+          "costo": "Q. 360.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "159STU",
+      "info": "Kia Amarillo",
+      "message": "Tienes 1 multa pendiente",
+      "total": 1,
+      "fines": [
+        {
+          "fecha": "16/10/2024 17:45",
+          "lugar": "Calzada San Juan",
+          "costo": "Q. 550.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "753VWX",
+      "info": "Volkswagen Naranja",
+      "message": "No tienes multas pendientes",
+      "total": 0,
+      "fines": []
+    },
+    {
+      "type": "P",
+      "number": "852YZA",
+      "info": "BMW Marrón",
+      "message": "Tienes 4 multas pendientes",
+      "total": 4,
+      "fines": [
+        {
+          "fecha": "03/10/2024 08:30",
+          "lugar": "Av. Reforma",
+          "costo": "Q. 410.00"
+        },
+        {
+          "fecha": "07/10/2024 14:20",
+          "lugar": "Calzada Roosevelt",
+          "costo": "Q. 330.00"
+        },
+        {
+          "fecha": "09/10/2024 11:10",
+          "lugar": "Anillo Periférico",
+          "costo": "Q. 290.00"
+        },
+        {
+          "fecha": "13/10/2024 15:50",
+          "lugar": "Calzada Atanasio Tzul",
+          "costo": "Q. 470.00"
+        }
+      ]
+    },
+    {
+      "type": "P",
+      "number": "951BCD",
+      "info": "Mercedes-Benz Azul",
+      "message": "Tienes 2 multas pendientes",
+      "total": 2,
+      "fines": [
+        {
+          "fecha": "17/10/2024 10:00",
+          "lugar": "Boulevard Liberación",
+          "costo": "Q. 390.00"
+        },
+        {
+          "fecha": "18/10/2024 12:30",
+          "lugar": "Carretera a El Salvador",
+          "costo": "Q. 580.00"
+        }
+      ]
+    }
+  ]
+}
